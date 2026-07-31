@@ -1,23 +1,23 @@
 ---
-title: Application Performance Monitoring (APM) mit Synoptryx
-description: Verwenden Sie das Synoptryx APM-Plug-in, um AEM-Transaktionen zu verfolgen, die JVM zu überwachen, Transaktionen zu analysieren und Transaktionstraces und externe Services auf AEM Managed Services zu überprüfen.
+title: Anwendungsleistungsüberwachung (APM) mit [!DNL Synoptryx]
+description: Verwenden Sie das  [!DNL Synoptryx] .APM-Plug-in, um AEM-Transaktionen nachzuverfolgen, die JVM zu überwachen, Transaktionen zu analysieren und Transaktionstraces und externe Services auf AEM Managed Services zu überprüfen.
 feature: Operations
 role: Admin
-source-git-commit: 883b68e3bc57ba6b55559560a967a6dbc553262a
+source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
 workflow-type: tm+mt
-source-wordcount: '1089'
+source-wordcount: '1078'
 ht-degree: 5%
 
 ---
 
 
-# Application Performance Monitoring (APM) mit Synoptryx {#application-performance-monitoring}
+# Anwendungsleistungsüberwachung (APM) mit [!DNL Synoptryx] {#application-performance-monitoring}
 
-Synoptryx Application Performance Monitoring (APM) bietet Echtzeit- und Verlaufsdaten für die insight in Adobe Experience Manager (AEM)-Performance und das Endbenutzererlebnis. End-to-End-Tracking von Transaktionen, Diagramme und Berichte geben Einblick in das Anwendungsverhalten bis hinunter zur Java-Code-Ebene.
+[!DNL Synoptryx] Application Performance Monitoring (APM) bietet Echtzeit- und Verlaufsdaten von insight in Adobe [!DNL Experience Manager] (AEM) und Endbenutzererlebnis. End-to-End-Tracking von Transaktionen, Diagramme und Berichte geben Einblick in das Anwendungsverhalten bis hinunter zur Java-Code-Ebene.
 
-## Managed Services Synoptryx APM-Plug-in {#apm-plugin}
+## Managed Services [!DNL Synoptryx] APM-Plug-in {#apm-plugin}
 
-AEM wird als Java-Anwendung auf Jetty mit Apache Felix OSGi-Modulen ausgeführt, die auf Apache Sling und Jackrabbit Oak basieren. Adobe Managed Services, AEM Engineering und Synoptryx Engineering entwickelten gemeinsam benutzerdefinierte Instrumentierungen für Managed Services-Umgebungen.
+AEM wird als Java-Anwendung auf Jetty mit Apache Felix OSGi-Modulen ausgeführt, die auf Apache Sling und Jackrabbit Oak basieren. Adobe Managed Services, AEM Engineering und [!DNL Synoptryx] Engineering haben gemeinsam benutzerdefinierte Instrumentierungen für Managed Services-Umgebungen entwickelt.
 
 Diese Instrumentierung sammelt:
 
@@ -29,7 +29,7 @@ Diese Instrumentierung sammelt:
 
 ![Synoptryx APM-Ablaufverfolgungsansicht mit verschachtelten AEM-Komponenten, die sich über Bereiche und die Ausführungszeitleiste für eine Seitenanfrage erstrecken](assets/image19.png)
 
-## Verwenden von Synoptryx APM {#using-apm}
+## Verwenden [!DNL Synoptryx] APM {#using-apm}
 
 Verwenden Sie APM, um Anwendungsprobleme zu finden, bevor sie Endbenutzer betreffen. Autor und Veröffentlichung nutzen eine Codebasis gemeinsam, werden jedoch als **separate APM-Anwendungen“ überwacht** sodass Sie jede Ebene unabhängig analysieren können.
 
@@ -38,7 +38,7 @@ Jede Managed Services-Umgebung umfasst:
 - Eine APM-Anwendung für Autor
 - Eine APM-Anwendung zum Veröffentlichen
 
-Wählen Sie einen Anwendungsnamen in Synoptryx APM aus, um das Übersichts- und Überwachungs-Dashboard zu öffnen.
+Wählen Sie einen Anwendungsnamen in [!DNL Synoptryx] APM aus, um das zugehörige Übersichts- und Überwachungs-Dashboard zu öffnen.
 
 ![Synoptryx APM-Anwendungsliste mit Autoren- und Veröffentlichungsanwendungen](assets/image1a.png)
 
@@ -70,7 +70,7 @@ Das Dashboard ist in erweiterbare Abschnitte unterteilt, die verwandte Anwendung
 
 ### Beschreibung
 
-Im Abschnitt **Übersicht** werden allgemeine Key Performance Indicators (KPIs) vorgestellt, die den aktuellen Status der überwachten Anwendung zusammenfassen.
+Im Abschnitt **[!UICONTROL Übersicht]** werden allgemeine Key Performance Indicators (KPIs) vorgestellt, die den aktuellen Status der überwachten Anwendung zusammenfassen.
 
 Diese KPIs bieten eine Zusammenfassung der Anwendungsaktivität, des Durchsatzes, des Anfrageerfolgs und des gesamten Benutzererlebnisses auf einen Blick.
 

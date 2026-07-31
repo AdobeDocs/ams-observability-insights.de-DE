@@ -1,11 +1,11 @@
 ---
-title: Infrastrukturüberwachung mit Synoptryx
-description: Verwenden Sie die Synoptryx-Infrastrukturüberwachung, um System-, Netzwerk-, Prozess- und Speichermetriken auf Host-Ebene für Ihren gesamten AEM Managed Services-Platzbedarf zu überprüfen.
+title: Infrastrukturüberwachung mit [!DNL Synoptryx]
+description: Verwenden Sie  [!DNL Synoptryx]  Infrastrukturüberwachung, um System-, Netzwerk-, Prozess- und Speichermetriken auf Host-Ebene für Ihren gesamten AEM Managed Services-Platzbedarf zu überprüfen.
 feature: Operations
 role: Admin
-source-git-commit: 261f6fac681c000ea6cbbdf403b144f00ab98326
+source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
 workflow-type: tm+mt
-source-wordcount: '1110'
+source-wordcount: '1107'
 ht-degree: 7%
 
 ---
@@ -36,7 +36,7 @@ Das Dashboard umfasst die folgenden Überwachungs-Panels:
 
 ### Beschreibung
 
-Das Bedienfeld **Host-CPU-Nutzung** zeigt den Prozentsatz der CPU-Ressourcen an, die derzeit vom Betriebssystem und allen ausgeführten Prozessen im Zeitverlauf verbraucht werden.
+Das Bedienfeld **[!UICONTROL Host-CPU-Nutzung]** zeigt den Prozentsatz der CPU-Ressourcen an, die derzeit vom Betriebssystem und allen ausgeführten Prozessen im Zeitverlauf verbraucht werden.
 
 Diese Metrik stellt die gesamte CPU-Nutzung auf dem Host dar und bietet eine Zeitreihenvisualisierung der Prozessoraktivität.
 
@@ -75,7 +75,7 @@ Das Bedienfeld fasst die CPU-Auslastung anhand von drei Werten zusammen:
 
 ### Beschreibung
 
-Das **Host Disk I/O**-Bedienfeld zeigt den Speicherdurchsatz für vom Host durchgeführte Festplatten-Lese- und -Schreibvorgänge an.
+Das **[!UICONTROL Host Disk I/O]**-Bedienfeld zeigt den Speicherdurchsatz für vom Host durchgeführte Festplatten-Lese- und -Schreibvorgänge an.
 
 Das Diagramm zeigt zwei unabhängige Zeitreihen, die die zwischen dem Betriebssystem und den Speichergeräten übertragenen Daten darstellen.
 
@@ -113,7 +113,7 @@ Die angezeigte Einheit skaliert automatisch anhand des Durchsatzes.
 
 ### Beschreibung
 
-Das **Host Network I/O**-Bedienfeld zeigt das Volumen des Netzwerk-Traffics an, der vom Host im Zeitverlauf übertragen und empfangen wird.
+Das **[!UICONTROL Host Network I/O]**-Bedienfeld zeigt das Volumen des Netzwerk-Traffics an, der vom Host im Zeitverlauf übertragen und empfangen wird.
 
 Das Diagramm misst die Rate, mit der Daten durch die Netzwerkschnittstellen fließen, und bietet Einblick in den Bandbreitenverbrauch des Netzwerks.
 Diese Metrik stellt den aggregierten Netzwerkdurchsatz dar.
@@ -156,7 +156,7 @@ abhängig vom beobachteten Traffic-Volumen.
 
 ### Beschreibung
 
-Das Bedienfeld **CPU-E/A** Wartezeit“ zeigt den Prozentsatz der CPU-Zeit an, die damit verbracht wurde, auf den Abschluss von Eingabe-/Ausgabevorgängen zu warten.
+Das Bedienfeld **[!UICONTROL CPU-E/A]** Wartezeit“ zeigt den Prozentsatz der CPU-Zeit an, die damit verbracht wurde, auf den Abschluss von Eingabe-/Ausgabevorgängen zu warten.
 
 Diese Metrik stellt die Inaktivitätsdauer des Prozessors dar, die auftritt, weil aktive Prozesse beim Warten auf Speichergeräte oder andere I/O-Vorgänge blockiert werden.
 
@@ -193,7 +193,7 @@ Das Diagramm zeigt, wie sich die I/O-Wartezeit im Laufe der Zeit ändert.
 
 ### Beschreibung
 
-Das **Speicherauslastung** zeigt den Gesamtanteil der aktuell auf dem überwachten Host ausgelasteten Speicherkapazität an.
+Das **[!UICONTROL Speicherauslastung]** zeigt den Gesamtanteil der aktuell auf dem überwachten Host ausgelasteten Speicherkapazität an.
 
 Das Diagramm bietet eine historische Ansicht der Kapazitätsauslastung des Dateisystems im ausgewählten Zeitintervall.
 
@@ -219,7 +219,7 @@ Das Diagramm bietet eine historische Ansicht der Kapazitätsauslastung des Datei
 
 ### Beschreibung
 
-Das **Festplattenauslastung** zeigt die Speicherauslastung für jedes bereitgestellte Dateisystem oder Speichergerät an.
+Das **[!UICONTROL Festplattenauslastung]** zeigt die Speicherauslastung für jedes bereitgestellte Dateisystem oder Speichergerät an.
 
 Jede Zeile entspricht einem bestimmten Blockgerät oder einer installierten Partition und zeigt den Prozentsatz des aktuell verwendeten Platzes an.
 
@@ -252,7 +252,7 @@ Jeder Eintrag enthält:
 
 ### Beschreibung
 
-Das **Host-CPU-Lastdurchschnitt** zeigt die Durchschnittswerte der Linux-Systemlast über drei rollierende Zeitfenster an.
+Das **[!UICONTROL Host-CPU-Lastdurchschnitt]** zeigt die Durchschnittswerte der Linux-Systemlast über drei rollierende Zeitfenster an.
 
 Im Gegensatz zur CPU-Auslastung gibt der Lastdurchschnitt die durchschnittliche Anzahl der Prozesse an, die entweder aktiv ausgeführt werden oder auf den Abschluss der CPU-Planung oder der E/A warten.
 
@@ -293,7 +293,7 @@ Für jede Metrik des Lastdurchschnitts:
 
 ### Beschreibung
 
-Das Bedienfeld **Host-Speichernutzung** zeigt den Prozentsatz des physischen Systemspeichers an, der derzeit vom Betriebssystem zugewiesen ist.
+Das Bedienfeld **[!UICONTROL Host-Speichernutzung]** zeigt den Prozentsatz des physischen Systemspeichers an, der derzeit vom Betriebssystem zugewiesen ist.
 
 Diese Metrik stellt die allgemeine RAM-Auslastung für alle laufenden Prozesse, den Kernelspeicher, Puffer und Caches dar.
 
