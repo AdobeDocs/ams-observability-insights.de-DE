@@ -3,7 +3,7 @@ title: Überwachen Sie Ihre AEM Managed Services-Umgebung mit [!DNL Synoptryx]
 description: Ein Überblick über  [!DNL Synoptryx]  Überwachung in Adobe [!DNL Experience Manager] Managed Services - was Adobe überwacht, wie Ihr Konto eingerichtet ist und wie Ihr Team Zugriff erhält.
 feature: Operations
 role: Admin
-source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
+source-git-commit: e8de2213d91e09da68a8f7014b075f81bd7f07ef
 workflow-type: tm+mt
 source-wordcount: '618'
 ht-degree: 0%
@@ -66,3 +66,4 @@ Fahren Sie mit den Überwachungs-Dashboards fort, die Ihr Team täglich verwende
 
 - [Application Performance Monitoring (APM)](application-performance-monitoring.md) - Verfolgen Sie AEM-Transaktionen, analysieren Sie das JVM-Verhalten und untersuchen Sie externe Services.
 - [Infrastrukturüberwachung](infrastructure-monitoring.md) - Überprüfen Sie System-, Netzwerk-, Prozess- und Speichermetriken auf Host-Ebene.
+
