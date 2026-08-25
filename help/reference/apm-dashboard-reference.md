@@ -1,76 +1,33 @@
 ---
-title: Anwendungsleistungsüberwachung (APM) mit [!DNL Synoptryx]
-description: Verwenden Sie das  [!DNL Synoptryx] .APM-Plug-in, um AEM-Transaktionen nachzuverfolgen, die JVM zu überwachen, Transaktionen zu analysieren und Transaktionstraces und externe Services auf AEM Managed Services zu überprüfen.
+title: APM-Dashboard-Referenz
+description: Referenz für Bedienfelder für APM-Dashboards mit Observability Insights, einschließlich Screenshots, Metriken und Einheiten.
 feature: Operations
 role: Admin
-source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
+source-git-commit: 1d54a6a398360b040221db5b2780d301722894bf
 workflow-type: tm+mt
-source-wordcount: '1078'
-ht-degree: 5%
+source-wordcount: '806'
+ht-degree: 7%
 
 ---
 
 
-# Anwendungsleistungsüberwachung (APM) mit [!DNL Synoptryx] {#application-performance-monitoring}
+# APM-Dashboard-Referenz {#apm-dashboard-reference}
 
-[!DNL Synoptryx] Application Performance Monitoring (APM) bietet Echtzeit- und Verlaufsdaten von insight in Adobe [!DNL Experience Manager] (AEM) und Endbenutzererlebnis. End-to-End-Tracking von Transaktionen, Diagramme und Berichte geben Einblick in das Anwendungsverhalten bis hinunter zur Java-Code-Ebene.
-
-## Managed Services [!DNL Synoptryx] APM-Plug-in {#apm-plugin}
-
-AEM wird als Java-Anwendung auf Jetty mit Apache Felix OSGi-Modulen ausgeführt, die auf Apache Sling und Jackrabbit Oak basieren. Adobe Managed Services, AEM Engineering und [!DNL Synoptryx] Engineering haben gemeinsam benutzerdefinierte Instrumentierungen für Managed Services-Umgebungen entwickelt.
-
-Diese Instrumentierung sammelt:
-
-- **Sinnvolle Transaktionsbenennung** - Sling-Erweiterungen richten Transaktionsnamen an der Seitenstruktur aus und fügen Insights-Ereignissen ein `requestURL`-Attribut hinzu, damit Sie Sling-URLs über Dashboards hinweg korrelieren können.
-
-![Synoptryx APM-Trace-Ansicht, die einen beschreibenden AEM-Transaktionsnamen mit Sling-Konsistenzprüfungs-Route und Spannen-Zeitleiste anzeigt](assets/image19a.png)
-
-- **JCR-Instrumentierung** - Vorgänge auf Repository-Ebene (einschließlich XPath und JCR-SQL2) werden im Datenbankabschnitt von APM kategorisiert und an Transaktionsabläufe angehängt.
-
-![Synoptryx APM-Ablaufverfolgungsansicht mit verschachtelten AEM-Komponenten, die sich über Bereiche und die Ausführungszeitleiste für eine Seitenanfrage erstrecken](assets/image19.png)
-
-## Verwenden [!DNL Synoptryx] APM {#using-apm}
-
-Verwenden Sie APM, um Anwendungsprobleme zu finden, bevor sie Endbenutzer betreffen. Autor und Veröffentlichung nutzen eine Codebasis gemeinsam, werden jedoch als **separate APM-Anwendungen“ überwacht** sodass Sie jede Ebene unabhängig analysieren können.
-
-Jede Managed Services-Umgebung umfasst:
-
-- Eine APM-Anwendung für Autor
-- Eine APM-Anwendung zum Veröffentlichen
-
-Wählen Sie einen Anwendungsnamen in [!DNL Synoptryx] APM aus, um das zugehörige Übersichts- und Überwachungs-Dashboard zu öffnen.
-
-![Synoptryx APM-Anwendungsliste mit Autoren- und Veröffentlichungsanwendungen](assets/image1a.png)
-
-## Dashboard-Abschnitte
-
-Das Dashboard „Anwendungs-Performance-Management“ enthält die folgenden Abschnitte:
-
-- Überblick
-- ROTE Metriken (Quote ・ Fehler ・ Dauer)
-- Traffic
-- Latenz und Leistung
-- Fehlerdetails
-- Top-Transaktionen
-- JVM-Status
-- JVM-Speicher
-- Speicherbereinigung
-
-In diesem Handbuch werden nur die unten angezeigten Abschnitte dokumentiert.
+Diese Referenz dokumentiert die wichtigsten in AEM Managed Services verwendeten APM-Bedienfelder für Observability Insights.
 
 ## Dashboard-Navigation
 
-![Dashboard-Navigation](assets/apm/1_opening_screen.png)
+![Dashboard-Navigation](../assets/apm/1_opening_screen.png)
 
 Das Dashboard ist in erweiterbare Abschnitte unterteilt, die verwandte Anwendungsleistungsmetriken gruppieren. Wenn Sie einen Abschnitt erweitern, werden ein oder mehrere Diagramme angezeigt, die mit dieser Kategorie verknüpft sind.
 
 ## Überblick
 
-![Übersicht](assets/apm/1.1_apm_overview.png)
+![Übersicht](../assets/apm/1.1_apm_overview.png)
 
 ### Beschreibung
 
-Im Abschnitt **[!UICONTROL Übersicht]** werden allgemeine Key Performance Indicators (KPIs) vorgestellt, die den aktuellen Status der überwachten Anwendung zusammenfassen.
+Im Abschnitt **Übersicht** werden allgemeine Key Performance Indicators (KPIs) vorgestellt, die den aktuellen Status der überwachten Anwendung zusammenfassen.
 
 Diese KPIs bieten eine Zusammenfassung der Anwendungsaktivität, des Durchsatzes, des Anfrageerfolgs und des gesamten Benutzererlebnisses auf einen Blick.
 
@@ -144,7 +101,7 @@ Die RED-Methode misst drei Hauptmerkmale eines Antrags:
 
 ### Abfragerate
 
-![Anfragerate](assets/apm/2_red_metrics_request_rate.png)
+![Anfragerate](../assets/apm/2_red_metrics_request_rate.png)
 
 #### Beschreibung
 
@@ -171,7 +128,7 @@ req_min
 
 ### Fehlerrate
 
-![Fehlerrate](assets/apm/3_error_rate.png)
+![Fehlerrate](../assets/apm/3_error_rate.png)
 
 #### Beschreibung
 
@@ -199,7 +156,7 @@ error_pct (1h ago)
 
 ### Dauer der Anfrage
 
-![Dauer der Anfrage](assets/apm/4_request_duration_p50_p95.png)
+![Dauer der Anfrage](../assets/apm/4_request_duration_p50_p95.png)
 
 #### Beschreibung
 
@@ -242,7 +199,7 @@ Für jedes Perzentil:
 
 ### Anfragen nach HTTP-Status-Code
 
-![Anfragen nach Status-Code](assets/apm/5_requests_by_status_code.png)
+![Anfragen nach Status-Code](../assets/apm/5_requests_by_status_code.png)
 
 #### Beschreibung
 
@@ -277,7 +234,7 @@ abhängig von der Anwendungsaktivität.
 
 ### Anfragerate nach Endpunkt
 
-![Anfragerate nach Endpunkt](assets/apm/6_request_rate_by_end_point.png)
+![Anfragerate nach Endpunkt](../assets/apm/6_request_rate_by_end_point.png)
 
 #### Beschreibung
 
@@ -306,7 +263,7 @@ endpoint_request_rate
 
 ### Reaktionszeit — p95 vs. 1 Stunde
 
-![Ansprechzeit P95](assets/apm/7_response_time_p95_1h.png)
+![Ansprechzeit P95](../assets/apm/7_response_time_p95_1h.png)
 
 #### Beschreibung
 
@@ -334,7 +291,7 @@ P95 (1 Hour Ago)
 
 ### APDEX-Wert im Zeitverlauf
 
-![APDEX](assets/apm/8_apdex_score_overtime.png)
+![APDEX](../assets/apm/8_apdex_score_overtime.png)
 
 #### Beschreibung
 
@@ -360,7 +317,7 @@ APDEX Score
 
 ### Durchsatz vs. P95-Latenz
 
-![Durchsatz vs. Latenz](assets/apm/9_throughput_vs_p95latency.png)
+![Durchsatz vs. Latenz](../assets/apm/9_throughput_vs_p95latency.png)
 
 #### Beschreibung
 
@@ -392,7 +349,7 @@ P95 Latency
 
 ### Fehlerrate % nach Statusgruppe
 
-![Fehlerrate nach Statusgruppe](assets/apm/10_error_rate_pct_by_status_group.png)
+![Fehlerrate nach Statusgruppe](../assets/apm/10_error_rate_pct_by_status_group.png)
 
 #### Beschreibung
 
@@ -424,10 +381,9 @@ abhängig vom beobachteten Traffic.
 - Mittlerer Fehlerprozentsatz
 - Zeitreihen-Trend
 
-
 ### Trend der Fehlerrate - jetzt vs. vor 1 Stunde
 
-![Fehlerrate 1 Stunde](assets/apm/11_error_ratio_trend_1h.png)
+![Fehlerrate 1 Stunde](../assets/apm/11_error_ratio_trend_1h.png)
 
 #### Beschreibung
 
@@ -452,7 +408,7 @@ Current Error Ratio
 
 ### Trend der Fehlerrate - jetzt vs. vor 6 Stunden
 
-![Fehlerrate 6 Stunden](assets/apm/12_error_ratio_trend_6h.png)
+![Fehlerrate 6 Stunden](../assets/apm/12_error_ratio_trend_6h.png)
 
 #### Beschreibung
 
