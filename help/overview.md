@@ -3,9 +3,9 @@ title: Überwachen Ihrer AEM Managed Services-Umgebung mit Observability Insight
 description: Beginnen Sie hier, um zu verstehen, was Observability Insights in AEM Managed Services behandelt, für wen es sich handelt und wie Sie durch den Rest dieses Handbuchs navigieren können.
 feature: Operations
 role: Admin
-source-git-commit: 94ba857f5b6a5c33483e4d49f5a1daa9583b6347
+source-git-commit: 440f182902d797a91b584fe1bac7f2b417f30ebe
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '733'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Überwachen Ihrer AEM Managed Services-Umgebung mit Observability Insights {#observability-insights-monitoring}
 
-Observability Insights bietet Einblicke in die Anwendungsleistung, den Zustand der Infrastruktur und das Verhalten von Services in Adobe Experience Manager Managed Services, ohne dass eine separate Überwachungsplattform erforderlich ist.
+**Observability Insights** bietet Einblicke in die Anwendungsleistung, den Zustand der Infrastruktur und das Verhalten von Services in AEM Managed Services, ohne dass eine separate Überwachungsplattform erforderlich ist.
 
-Wenn Sie für die Zuverlässigkeit von Services, die Reaktion auf Vorfälle oder die Leistungsanalyse verantwortlich sind, hilft Ihnen Observability Insights, schnell von Symptomen zu Beweisen zu wechseln. Sie kombiniert Anwendungstelemetrie und Statussignale auf Host-Ebene, damit Kundenteams und Adobe Managed Services Probleme aus einer gemeinsamen betrieblichen Sicht untersuchen können.
+Wenn Sie für die Zuverlässigkeit von Services, die Reaktion auf Vorfälle oder Leistungsanalysen verantwortlich sind, hilft **Observability Insights** Ihnen, schnell von Symptomen zu Beweisen zu wechseln. Sie kombiniert Anwendungstelemetrie und Statussignale auf Host-Ebene, damit Kundenteams und Adobe Probleme aus einer gemeinsamen betrieblichen Sicht untersuchen können.
 
 ## Warum verwenden Teams Observability Insights? {#why-teams-use-observability-insights}
 
@@ -88,4 +88,4 @@ Bevor Sie sich anmelden können, bestätigen Sie Folgendes:
 >
 > **Zugriff erhalten:** Zugriff auf Observability Insights erfordert die Bereitstellung von Adobe IMS. Wenden Sie sich an Ihren Customer Success Engineer (CSE), um den Benutzerzugriff für Ihr Unternehmen bereitzustellen und zu verwalten.
 
-Nachdem der CSE das Konto bereitgestellt hat, melden Sie sich unter &quot;[.adobecqms.net“ &#x200B;](https://insights.adobecqms.net). Diese URL ist für alle AEM Managed Services-Kunden identisch. Die Umgebungen und Dashboards Ihres Unternehmens werden auf Ihr bereitgestelltes Konto angewendet.
+Nachdem der CSE das Konto bereitgestellt hat, melden Sie sich unter &quot;[.adobecqms.net“ ](https://insights.adobecqms.net). Diese URL ist für alle AEM Managed Services-Kunden identisch. Die Umgebungen und Dashboards Ihres Unternehmens werden auf Ihr bereitgestelltes Konto angewendet.

@@ -3,9 +3,9 @@ title: Häufig gestellte Fragen
 description: Häufige Fragen und Ausgangspunkte für Untersuchungen zu Observability Insights in AEM Managed Services.
 feature: Operations
 role: Admin
-source-git-commit: 3e9cd3734665dc06a4b90902b229dffb8f5421df
+source-git-commit: 68b80f99e8be9deed37ea857d1dc7cb0ba3ec94d
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '186'
 ht-degree: 0%
 
 ---
@@ -26,13 +26,6 @@ Dies weist normalerweise auf ein Problem bei der Benutzerbereitstellung hin. Wen
 ## Wie kann ich feststellen, ob ein Problem mit der Anwendung oder der Infrastruktur zusammenhängt? {#application-or-infrastructure}
 
 Beginnen Sie mit [Anwendungsleistungsüberwachung](/help/applications.md), um Anfrageraten, Fehlerquoten und Latenzen bei der Autoren- oder Veröffentlichungsinstanz zu überprüfen. Wenn die Anwendungssignale erhöht sind, verwenden Sie [Hosts](/help/hosts.md), um zu überprüfen, ob der Ressourcendruck auf Host-Ebene - CPU, Arbeitsspeicher, Festplatte oder Netzwerk - erklärt oder erweitert, was Sie sehen.
-
-## Wie sollte ich ein bestimmtes Diagramm oder eine bestimmte Metrik verstehen? {#understand-graph-or-metric}
-
-Verwenden Sie die Dashboard-Referenzseiten für Bereichsbeschreibungen, Metriknamen, Einheiten und Screenshots:
-
-- [APM-Dashboard-Referenz](../reference/apm-dashboard-reference.md)
-- [Referenz zum Infrastruktur-Dashboard](../reference/infrastructure-dashboard-reference.md)
 
 ## Welche Daten werden von Observability Insights tatsächlich erfasst? {#what-data-is-collected}
 
