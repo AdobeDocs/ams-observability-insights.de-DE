@@ -3,9 +3,9 @@ title: Überwachen Ihrer AEM Managed Services-Umgebung mit Observability Insight
 description: Beginnen Sie hier, um zu verstehen, was Observability Insights in AEM Managed Services behandelt, für wen es sich handelt und wie Sie durch den Rest dieses Handbuchs navigieren können.
 feature: Operations
 role: Admin
-source-git-commit: 440f182902d797a91b584fe1bac7f2b417f30ebe
+source-git-commit: fc38d43e53a366fb16151f3bd105b561f55fcbfa
 workflow-type: tm+mt
-source-wordcount: '733'
+source-wordcount: '741'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 **Observability Insights** bietet Einblicke in die Anwendungsleistung, den Zustand der Infrastruktur und das Verhalten von Services in AEM Managed Services, ohne dass eine separate Überwachungsplattform erforderlich ist.
 
 Wenn Sie für die Zuverlässigkeit von Services, die Reaktion auf Vorfälle oder Leistungsanalysen verantwortlich sind, hilft **Observability Insights** Ihnen, schnell von Symptomen zu Beweisen zu wechseln. Sie kombiniert Anwendungstelemetrie und Statussignale auf Host-Ebene, damit Kundenteams und Adobe Probleme aus einer gemeinsamen betrieblichen Sicht untersuchen können.
+
+## Whitepaper zu Observability Insights
+
+[Whitepaper zu Observability Insights herunterladen](v2-assets/Observability_Insights_Overview.pdf)
 
 ## Warum verwenden Teams Observability Insights? {#why-teams-use-observability-insights}
 
