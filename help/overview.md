@@ -92,4 +92,4 @@ Bevor Sie sich anmelden können, bestätigen Sie Folgendes:
 >
 > **Zugriff erhalten:** Zugriff auf Observability Insights erfordert die Bereitstellung von Adobe IMS. Wenden Sie sich an Ihren Customer Success Engineer (CSE), um den Benutzerzugriff für Ihr Unternehmen bereitzustellen und zu verwalten.
 
-Nachdem der CSE das Konto bereitgestellt hat, melden Sie sich unter &quot;[.adobecqms.net“ ](https://insights.adobecqms.net). Diese URL ist für alle AEM Managed Services-Kunden identisch. Die Umgebungen und Dashboards Ihres Unternehmens werden auf Ihr bereitgestelltes Konto angewendet.
+Nachdem der CSE das Konto bereitgestellt hat, melden Sie sich unter &quot;[.adobecqms.net“ &#x200B;](https://insights.adobecqms.net). Diese URL ist für alle AEM Managed Services-Kunden identisch. Die Umgebungen und Dashboards Ihres Unternehmens werden auf Ihr bereitgestelltes Konto angewendet.
