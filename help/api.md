@@ -15,7 +15,7 @@ Mit der öffentlichen Observability Insights-API können Sie Ihre eigenen Observ
 
 > Ersetzen Sie `{{API_BASE_URL}}` in diesem Dokument durch den API-Host Ihrer Observability Insights-Instanz, z. B. `https://insights.adobecqms.net/`.
 
----
+&#x200B;---
 
 ## &#x200B;1. Abrufen eines API-Schlüssels
 
@@ -48,7 +48,7 @@ Im Abschnitt API-Schlüssel werden alle von Ihnen erstellten Schlüssel aufgelis
 - Drehen Sie Schlüssel regelmäßig und widerrufen Sie alle Schlüssel, die nicht mehr verwendet werden.
 - Wenn ein Schlüssel kompromittiert ist, widerrufen Sie ihn sofort aus den **Org-Einstellungen → API-**) und generieren Sie einen Ersatz.
 
----
+&#x200B;---
 
 ## &#x200B;2. Authentifizieren von Anforderungen
 
@@ -60,7 +60,7 @@ Authorization: Bearer synx_9pQ2v6f1WYbLZk3n0aRtEo4jXcHsVmDgUiPq7B8l1yc
 
 Anfragen ohne gültigen Schlüssel oder mit abgelaufenem/widerrufenem Schlüssel erhalten `401 Unauthorized`. Sitzungsanmeldungen (Browser-Cookies/Token) werden **nicht** auf dieser API akzeptiert.
 
----
+&#x200B;---
 
 ## &#x200B;3. Grundlegende Konzepte
 
@@ -111,7 +111,7 @@ Fehler werden als JSON mit einem `error` Feld und normalerweise einer für Mensc
 | `502 Bad Gateway` | Upstream-Abfrage fehlgeschlagen - sicherer Versuch |
 | `503 Service Unavailable` | Daten-Backend vorübergehend nicht verfügbar |
 
----
+&#x200B;---
 
 ## &#x200B;4. Endpunkte
 
@@ -347,7 +347,7 @@ curl -s "{{API_BASE_URL}}/public/v1/pages?tenant_id=<tenant_id>&limit=50" \
 }
 ```
 
----
+&#x200B;---
 
 ## &#x200B;5. Was diese API nicht tut
 
@@ -355,7 +355,7 @@ curl -s "{{API_BASE_URL}}/public/v1/pages?tenant_id=<tenant_id>&limit=50" \
 - **Keine mandantenübergreifenden Abfragen.** Jede Anfrage ist auf genau eine `tenant_id` beschränkt.
 - **Kein Schreibzugriff.** Die öffentliche API ist schreibgeschützt.
 
----
+&#x200B;---
 
 ## 6. Support
 
