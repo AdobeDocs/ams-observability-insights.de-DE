@@ -1,10 +1,12 @@
 ---
-source-git-commit: e5523081fcd68500602e5d1bf853694d1f6c3980
+title: Öffentliche Observability Insights-API
+description: Mit der öffentlichen Observability Insights-API können Sie Ihre eigenen Observability-Daten - Anfrageübersichten, Service-Kataloge, Traces und Metriken - direkt in Ihre eigenen Tools, Skripte und Dashboards ziehen.
+source-git-commit: f9361af48539ab50bcde6265963247714621c0ce
 workflow-type: tm+mt
-source-wordcount: '1104'
+source-wordcount: '1135'
 ht-degree: 7%
-
 ---
+
 # Öffentliche Observability Insights-API
 
 Mit der öffentlichen Observability Insights-API können Sie Ihre eigenen Observability-Daten - Anfrageübersichten, Service-Kataloge, Traces und Metriken - direkt in Ihre eigenen Tools, Skripte und Dashboards ziehen.
@@ -14,8 +16,6 @@ Mit der öffentlichen Observability Insights-API können Sie Ihre eigenen Observ
 - **Authentifizierung:** API-Schlüssel (Bearer-Token)
 
 > Ersetzen Sie `{{API_BASE_URL}}` in diesem Dokument durch den API-Host Ihrer Observability Insights-Instanz, z. B. `https://insights.adobecqms.net/`.
-
-&#x200B;---
 
 ## &#x200B;1. Abrufen eines API-Schlüssels
 
@@ -48,7 +48,6 @@ Im Abschnitt API-Schlüssel werden alle von Ihnen erstellten Schlüssel aufgelis
 - Drehen Sie Schlüssel regelmäßig und widerrufen Sie alle Schlüssel, die nicht mehr verwendet werden.
 - Wenn ein Schlüssel kompromittiert ist, widerrufen Sie ihn sofort aus den **Org-Einstellungen → API-**) und generieren Sie einen Ersatz.
 
-&#x200B;---
 
 ## &#x200B;2. Authentifizieren von Anforderungen
 
@@ -59,8 +58,6 @@ Authorization: Bearer synx_9pQ2v6f1WYbLZk3n0aRtEo4jXcHsVmDgUiPq7B8l1yc
 ```
 
 Anfragen ohne gültigen Schlüssel oder mit abgelaufenem/widerrufenem Schlüssel erhalten `401 Unauthorized`. Sitzungsanmeldungen (Browser-Cookies/Token) werden **nicht** auf dieser API akzeptiert.
-
-&#x200B;---
 
 ## &#x200B;3. Grundlegende Konzepte
 
@@ -110,8 +107,6 @@ Fehler werden als JSON mit einem `error` Feld und normalerweise einer für Mensc
 | `429 Too Many Requests` | Ratenlimit überschritten - siehe `Retry-After` |
 | `502 Bad Gateway` | Upstream-Abfrage fehlgeschlagen - sicherer Versuch |
 | `503 Service Unavailable` | Daten-Backend vorübergehend nicht verfügbar |
-
-&#x200B;---
 
 ## &#x200B;4. Endpunkte
 
@@ -347,15 +342,11 @@ curl -s "{{API_BASE_URL}}/public/v1/pages?tenant_id=<tenant_id>&limit=50" \
 }
 ```
 
-&#x200B;---
-
 ## &#x200B;5. Was diese API nicht tut
 
 - **Kein unformatierter SQL-Zugriff.** Alle Endpunkte geben kuratierte, speziell entwickelte Daten-Shapes zurück - Sie können den zugrunde liegenden Datenspeicher nicht direkt abfragen.
 - **Keine mandantenübergreifenden Abfragen.** Jede Anfrage ist auf genau eine `tenant_id` beschränkt.
 - **Kein Schreibzugriff.** Die öffentliche API ist schreibgeschützt.
-
-&#x200B;---
 
 ## 6. Support
 
