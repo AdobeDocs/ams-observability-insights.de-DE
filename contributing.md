@@ -17,7 +17,7 @@ Dieses Projekt hat den [Open Source-Verhaltenskodex für Adobe &#x200B;](code-of
 
 ## Dokumentation zum Contributor Guide
 
-Siehe das [Handbuch für Mitwirkende](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
+Siehe das [Handbuch für Mitwirkende](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=de).
 
 ## So können Sie einen Beitrag leisten
 
@@ -58,4 +58,4 @@ Das Dokumentations-Team freut sich über jeden Beitrag und prüft Ihren Beitrag,
 
 ## Weiterführende Informationen
 
-Weitere Informationen zur Verwendung der GitHub-Autorenplattform [&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) Sie im Adobe-Handbuch für Mitwirkende an Dokumenten .
+Weitere Informationen zur Verwendung der GitHub-Autorenplattform [&#128279;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=de) Sie im Adobe-Handbuch für Mitwirkende an Dokumenten .
