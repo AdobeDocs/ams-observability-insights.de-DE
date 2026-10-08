@@ -1,7 +1,10 @@
 ---
 title: Öffentliche Observability Insights-API
 description: Mit der öffentlichen Observability Insights-API können Sie Ihre eigenen Observability-Daten - Anfrageübersichten, Service-Kataloge, Traces und Metriken - direkt in Ihre eigenen Tools, Skripte und Dashboards ziehen.
-source-git-commit: f9361af48539ab50bcde6265963247714621c0ce
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '1135'
 ht-degree: 7%
