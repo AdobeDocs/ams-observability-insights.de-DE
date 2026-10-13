@@ -3,7 +3,7 @@ cloud: Experience Cloud
 user-guide-title: Adobe Managed Services Observability Insights
 breadcrumb-title: Observability Insights
 user-guide-description: Dokumentation zu Adobe Managed Services Observability Insights
-source-git-commit: 4949fcad799260aa73354a8c0b9d79e6394cb257
+source-git-commit: 3508bf6f3044edfbdb5d63283a8d37c062c8e494
 workflow-type: tm+mt
 source-wordcount: '104'
 ht-degree: 12%
@@ -20,25 +20,25 @@ ht-degree: 12%
 - [Hosts](/help/hosts.md)
 - [API-Dokumentation](/help/api.md)
 - [Häufig gestellte Fragen](/help/troubleshooting/common-questions.md)
-- [**Insights-**] {#insights-query}
+- [Insights-] {#insights-query}
   - [Erste Schritte mit SQL](/help/insights-query/query/get-started-sql.md)
   - [Abfragen mit SQL](/help/insights-query/query/how-to-query-sql.md)
   - [SQL-Abfragebeispiele](/help/insights-query/query/sql-query-examples.md)
-- [**Diagramme und Dashboard**] {#charts-dashboard}
+- [Diagramme und Dashboard] {#charts-dashboard}
   - [Erste Schritte mit Diagrammen und Dashboards](/help/charts-dashboard/get-started-charts-dashboard.md)
   - [Erstellen von Diagrammen und Dashboards](/help/charts-dashboard/create-dashboard.md)
-- [**SQL-Referenz**] {#reference}
+- [SQL-Referenz] {#reference}
   - [SQL-Referenz](/help/references/sql-reference.md)
   - [Datenwörterbuch](/help/references/data-dictionary.md)
-- [**Tutorials**] {#tutorials}
+- [Tutorials] {#tutorials}
   - [Tutorial 1: Erste Abfragen](/help/tutorials/tutorial-1.md)
   - [Tutorial 2: Steuern Ihrer Daten](/help/tutorials/tutorial-2.md)
   - [Tutorial 3: Erweitern des Dashboards](/help/tutorials/tutorial-3.md)
   - [Tutorial 4: Erweiterte Funktionen](/help/tutorials/tutorial-4.md)
-- [**Beispiele**] {#examples}
+- [Beispiele] {#examples}
   - [Cookbook abfragen](/help/examples/query-cookbook.md)
   - [Dashboard-Blueprint](/help/examples/dashboard-blueprint.md)
-- [**Bedienen**]{#operate}
+- [Bedienen]{#operate}
   - [Leistung](/help/operate/performance.md)
   - [Fehlerbehebung](/help/operate/troubleshooting.md)
   - [Anhang](/help/operate/appendix.md)
