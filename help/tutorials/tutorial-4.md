@@ -64,7 +64,7 @@ Entwicklung eines Segments im Zeitverlauf:
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > `avgDurationMs` wird nicht automatisch mit einer Einheit getaggt. Setzen Sie das Widget **Einheit** auf `ms`.
 
 ### Erkennen und Abfragen beliebiger Metriken
@@ -91,7 +91,7 @@ Um anzuzeigen, **span-Attribute** für jeden Service aufgefüllt werden, zählen
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Wenn eine kuratierte Entität vorhanden ist (z. B. `CpuUtilization`), sollten Sie sie gegenüber `MetricGauge` bevorzugen. Es wendet den richtigen Filter und die richtige Einheitenkonvertierung an und kann rollup-beschleunigt werden.
 
 ### Auswählen der richtigen Ablaufverfolgungsentität

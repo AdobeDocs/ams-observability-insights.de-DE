@@ -13,7 +13,7 @@ ht-degree: 1%
 | **Gilt für** | Insights-Benutzeroberfläche → **Erkunden** und **Dashboards** (benutzerdefinierte Dashboards) |
 | **Zielgruppe** | Ingenieure, SREs und Power-User, die SQL kennen |
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Jeder Code-Block mit der Kennzeichnung `sql` ist eine SQL-Abfrage, die Sie direkt in **Erkunden → SQL** oder in **Dashboards → Widget hinzufügen → SQL** einfügen können.
 
 ## Erste Schritte mit SQL: die Sprache Ihrer Telemetrie {#get-started-with-sql-the-language-of-your-telemetry}
@@ -38,7 +38,7 @@ SQL verwenden für:
 
 SQL unterstützt sowohl **Ereignisabfragen**, die einzelne Anfragezeilen zurückgeben, als auch **Aggregatabfragen**, die Gesamtsummen, Perzentile, Raten, Aufschlüsselungen und Zeitreihen zurückgeben.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Die Vorlagen in **Dashboards → Dashboard erstellen** werden vollständig aus SQL erstellt. Öffnen Sie ein beliebiges Vorlagen-Widget mit dem Stiftsymbol, um die zugehörige Abfrage anzuzeigen und daraus zu lernen.
 
 ### Was Sie abfragen können
@@ -52,7 +52,7 @@ SQL kann vier Datenfamilien abfragen. Die vollständige Liste finden Sie unter [
 | **Generische Metriken** | `MetricGauge`, `MetricSum` | Beliebige OpenTelemetry-Metriken nach Name, Metrikerkennung |
 | **Voraggregierte span-Komposition** | `SpanBreakdown` | Welche untergeordneten Vorgänge eine Transaktion bilden |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Protokolle, Warnhinweisdefinitionen und Inventarbeziehungen sind nicht verfügbar.
 
 ### Verwendung von SQL

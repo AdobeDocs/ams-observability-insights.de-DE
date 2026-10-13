@@ -36,7 +36,7 @@ ht-degree: 2%
 | **Raster** | 12 Spalten. Widgets am Griff ziehen, Größe von der Ecke ändern (mindestens 2×2). |
 | **Widget-Kopfzeile** (beim Bewegen des Mauszeigers) | CSV herunterladen, PNG herunterladen, bearbeiten, duplizieren, entfernen, Griff ziehen |
 
-> [!IMPORTANT]
+&#x200B;> [!IMPORTANT]
 > **Speichern ist explizit.** Layout-Änderungen, neue Widgets, Registerkarten und Variablen verbleiben im Browser, bis Sie auf &quot;**&quot;**. Die Schaltfläche _Speichern… → gespeichert_ oder _Speichern fehlgeschlagen_ (siehe [Fehlerbehebung](#troubleshooting)).
 
 #### Schritt 4: Widget hinzufügen
@@ -60,7 +60,7 @@ Klicken Sie **Widget hinzufügen**. Das Dialogfeld verfügt über drei Modi: **E
 3. Verwenden Sie das Bedienfeld **Handbuch zur Abfrage**, um Entitäten, Attribute und Beispiele zu durchsuchen.
 4. Klicken Sie **Abfrage ausführen**. Sie sehen, _`<Entity>`Abfrage gültig ist_ eine Live-Vorschau und eine Zusammenfassung (`N rows · N time points · N groups`). Eine _Serie_ Warnung wird angezeigt, wenn weniger als drei Zeitpunkte vorliegen.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Der Builder behandelt die häufigsten Abfragen. Zu SQL wechseln für `apdex`, `percentage`, `rate`, `FILTER`, mehrere Aggregate, `OR`, `IN`, mehrere Facetten oder `ORDER BY`.
 
 #### Schritt 5: Konfigurieren des Erscheinungsbilds
@@ -96,7 +96,7 @@ Wenn die einzelne Zeile eines Zahlen-Widgets einen Textwert enthält (z. B. `lat
 - **Hinweis**: Nur Text (bis zu 4.000 Zeichen, Leerzeilen werden beibehalten). Verwenden Sie es für Runbook-Links, Eigentümer und SLO-Definitionen. `{{variables}}` werden gerendert.
 - **Bereichs-**: Häkchen _Erstellen Sie eine Bereichs-_. Es erstreckt sich über die gesamte Breite und sein Pfeil reduziert jedes Widget darunter bis zur nächsten Abschnittsüberschrift. Verwenden Sie sie für Gruppierungen wie **PUBLISH**, **AUTHOR** und **DISPATCHER**.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Widget-Titel, die auf `- PUBLISH` oder `- AUTHOR` enden, erhalten einen subtilen Farbhinweis, der das Scannen von AEM-Dashboards nach Ebene erleichtert.
 
 ### Die Zeitauswahl
@@ -110,14 +110,14 @@ Wenn die einzelne Zeile eines Zahlen-Widgets einen Textwert enthält (z. B. `lat
 
 ### Variablen
 
-Mit Variablen kann ein Dashboard mehrere Kontexte bereitstellen, z. B. jeweils einen Service, eine Umgebung oder einen Schwellenwert. Sie werden in ([ 3) ](#87-make-dashboards-reusable-with-variables).
+Mit Variablen kann ein Dashboard mehrere Kontexte bereitstellen, z. B. jeweils einen Service, eine Umgebung oder einen Schwellenwert. Sie werden in ([&#x200B; 3) &#x200B;](#87-make-dashboards-reusable-with-variables).
 
-> [!WARNING]
-> **Bekannte Einschränkung im aktuellen Build:** `{{variables}}` in Widgets **Titel** und **Text-Widgets**. Innerhalb des Widgets **SQL** werden sie im Dashboard gerendert, aber die **Widget hinzufügen** -Vorschau und die Server-seitige **Speichern**-Prüfung lehnen das rohe `{{name}}`-Token mit _unerwartetem Zeichen &#39;{&#39;_ ab. Bis dies behoben ist, verwenden Sie Literalwerte in Widget-Abfragen und verwenden Sie **Duplizieren** um Varianten zu erstellen.
+&#x200B;> [!WARNING]
+> **Bekannte Einschränkung im aktuellen Build:** `{{variables}}` in Widgets **Titel** und **Text-Widgets**. Innerhalb des Widgets **SQL** werden sie im Dashboard gerendert, aber die **Widget hinzufügen** -Vorschau und die Server-seitige **Speichern**-Prüfung lehnen das rohe `{{name}}`-Token mit _unerwartetem Zeichen &#39;&lbrace;&#39;_ ab. Bis dies behoben ist, verwenden Sie Literalwerte in Widget-Abfragen und verwenden Sie **Duplizieren** um Varianten zu erstellen.
 
 ### Formel-Widgets
 
-Eine Formel kombiniert 2-6 benannte SQL-Abfragen arithmetisch, z. B. `(errors / total) * 100`. Verwenden Sie eine Option, wenn ein KPI mehr als eine Abfrage erfordert, z. B. ein Verhältnis, Reserven, eine Summe der Raten oder eine Brennrate. Siehe [Tutorial ](#86-combine-queries-with-formula-widgets).
+Eine Formel kombiniert 2-6 benannte SQL-Abfragen arithmetisch, z. B. `(errors / total) * 100`. Verwenden Sie eine Option, wenn ein KPI mehr als eine Abfrage erfordert, z. B. ein Verhältnis, Reserven, eine Summe der Raten oder eine Brennrate. Siehe [Tutorial &#x200B;](#86-combine-queries-with-formula-widgets).
 
 ### Freigeben, Exportieren und Importieren
 
@@ -128,7 +128,7 @@ Eine Formel kombiniert 2-6 benannte SQL-Abfragen arithmetisch, z. B. `(errors / 
 | **Import** | Lädt einen JSON-Export **in das geöffnete Dashboard** und ersetzt dessen Registerkarten und Variablen. Klicken Sie dann auf **Speichern**. Tipp: Erstellen Sie zuerst ein leeres Dashboard und importieren Sie es dann in das Dashboard. |
 | **CSV/PNG** | Downloads pro Widget aus der Widget-Kopfzeile. |
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Mit dem Export und Import können Sie Dashboards zur Versionskontrolle in Git verwenden und ein Dashboard von einem Kunden zum anderen weiterleiten. Das Dateiformat wird im [Anhang](#142-export-file-format) beschrieben.
 
 ### Tipps für die Leistung von Dashboards und Diagrammen

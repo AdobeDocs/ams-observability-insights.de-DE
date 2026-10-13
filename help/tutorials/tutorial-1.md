@@ -32,7 +32,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Die Zeilen werden nach der ersten Spalte in absteigender Reihenfolge sortiert. Wenn Sie also zuerst `timestamp`, erhalten Sie die neuesten Anfragen am Anfang.
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > SQL hat keine `SELECT *`. Durch die Auflistung von Attributen werden Ergebnisse klein und lesbar gehalten. Das [Datenwörterbuch](#data-dictionary) und die automatische Vervollständigung im Editor zeigen, was verfügbar ist.
 
 ### Daten aggregieren
@@ -65,7 +65,7 @@ Trennt Aggregate durch Kommas und benennt jedes mit `AS`:
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Aliase werden zu Spaltenüberschriften und Legendenbeschriftungen, auf die Sie in `ORDER BY` verweisen. Gewöhnen Sie sich an, jedes Aggregat zu benennen.
 
 ### Zeitfenster festlegen
@@ -84,7 +84,7 @@ SELECT count(*) AS requests FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 Einheiten können `second`, `minute`, `hour`, `day` oder `week` sein. Das Fenster kann höchstens 31 Tage betragen.
 
-> [!IMPORTANT]
+&#x200B;> [!IMPORTANT]
 > In **Erkunden** und **Dashboards** steuert die **Zeitauswahl** oben auf der Seite das Fenster und überschreibt `SINCE`/`UNTIL`. Um einen anderen Punkt anzuzeigen, ändern Sie die Auswahl. Der Rest dieses Handbuchs lässt `SINCE` aus diesem Grund aus Dashboard-Abfragen aus.
 
 ### Trends mit `TIMESERIES` grafisch darstellen
@@ -121,7 +121,7 @@ Verwenden Sie `LIKE` mit `%` für Teilübereinstimmungen:
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Bei Zeichenfolgenwerten wird zwischen Groß- und Kleinschreibung unterschieden und einfache Anführungszeichen verwendet: `'Error'`, nicht `"Error"` oder `'error'`. Ersetzen Sie `checkout` durch einen Dienst Ihres Mandanten. Im nächsten Schritt erfahren Sie, wie Sie sie auflisten.
 
 ### Mit `FACET` gruppieren

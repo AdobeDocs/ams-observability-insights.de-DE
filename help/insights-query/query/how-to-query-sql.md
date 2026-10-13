@@ -12,7 +12,7 @@ Bevor Sie ein Tool verwenden, sollten Sie wissen, wie es funktioniert. In diesem
 
 Die beste Möglichkeit, SQL zu verwenden, besteht darin, **Erkunden** zu öffnen und es mit Ihren eigenen Daten zu versuchen.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > SQL ist schreibgeschützt. Es können keine Daten geändert oder gelöscht werden, und jede Abfrage bezieht sich auf Ihren Mandanten.
 
 1. **Kunden auswählen** Im Mandantenschalter oben in der App benötigt SQL einen einzelnen Mandanten.
@@ -37,7 +37,7 @@ FROM Transaction SELECT count(*) FACET service
 
 Dies zählt Anfragen pro Service und zeigt an, welche Services Berichte erstellen.
 
-> [!IMPORTANT]
+&#x200B;> [!IMPORTANT]
 > **Entdecken vor dem Erstellen.** Die Verfügbarkeit von Attributen hängt davon ab, wie jeder Service instrumentiert ist. Führen Sie [Discovery-Abfragen](#101-data-discovery) zuerst auf einem neuen Mandanten aus, um zu sehen, welche Services, Hosts, Attribute und Metriken tatsächlich Daten enthalten.
 
 ### Ausführen einer Abfrage
@@ -87,5 +87,5 @@ Jede Abfrage gibt eine von vier Formen zurück. Die Form entscheidet, welche Dia
 | **Erkunden** | Die globale Zeitauswahl. `SINCE`/`UNTIL` werden ignoriert, wenn ein Auswahlbereich aktiv ist. |
 | **API ohne expliziten Bereich** | `SINCE`/`UNTIL` in der Abfrage, standardmäßig die letzte Stunde. |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Da die Auswahl in Dashboards und beim Erkunden gewinnt, werden in diesem Handbuch in der Regel `SINCE` aus Dashboard-Abfragen ausgeschlossen. Für die Abfragen sollte immer eine Zeitauswahl definiert werden.

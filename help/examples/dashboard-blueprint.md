@@ -23,7 +23,7 @@ Jeder Blueprint ist ein vollständiges, komplexes Dashboard. Es listet das Ziel,
 
 **Diagrammlegende:** **N** = Zahl, **L** = Linie, **A** = Fläche, **B** = Balken, **P** = Kreis, **T** = Tabelle.
 
----
+&#x200B;---
 
 ### Goldene Signale / SLO-Board
 
@@ -120,7 +120,7 @@ SELECT average(value) AS memory FROM MemoryUtilization FACET host TIMESERIES AUT
 SELECT average(value) AS load5m FROM LoadAverage5m FACET host TIMESERIES AUTO LIMIT 10
 ```
 
----
+&#x200B;---
 
 ### Pinnwand für Fehlersuche
 
@@ -207,7 +207,7 @@ SELECT count(*) AS failures, percentile(duration, 95) AS p95 FROM Span WHERE kin
 SELECT timestamp, service, host, name, urlPath, http.statusCode, duration, statusMessage, traceId FROM Transaction WHERE status = 'Error' LIMIT 200
 ```
 
----
+&#x200B;---
 
 ### Deep-Dive-Board mit Latenz
 
@@ -276,7 +276,7 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT count(*) AS calls, max(duration) AS slowestMs, latest(traceId, duration) AS slowestTraceId, latest(host, duration) AS slowestHost FROM Transaction FACET name ORDER BY slowestMs DESC LIMIT 50
 ```
 
----
+&#x200B;---
 
 ### Pinnwand für nachgelagerte Abhängigkeiten
 
@@ -357,7 +357,7 @@ SELECT count(*) FILTER (WHERE kind = 'Producer') AS produced, count(*) FILTER (W
 SELECT count(*) AS calls, percentile(duration, 95) AS p95, percentage(*, WHERE status = 'Error') AS errorPct FROM Span WHERE rpc.system != '' FACET service, rpc.system, rpc.method ORDER BY calls DESC LIMIT 50
 ```
 
----
+&#x200B;---
 
 ### AEM-Autoren-/Veröffentlichungs-/Dispatcher-Board
 
@@ -514,7 +514,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 SELECT percentOfTotal(duration) AS timeShare FROM Span WHERE sling.servlet != '' FACET sling.servlet LIMIT 20
 ```
 
----
+&#x200B;---
 
 ### Infrastrukturkapazitäts-Board
 
@@ -661,7 +661,7 @@ Formel:
 netRx + netTx
 ```
 
----
+&#x200B;---
 
 ### JVM-Health Board
 
@@ -733,7 +733,7 @@ Formel:
 (used / limit) * 100
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Um eine Formel auf einen Host zu beschränken, fügen Sie `WHERE host = 'my-publish-01'` zu (**)** Abfragen hinzu.
 
 **W6 ・ Vom Host verwendeter Heap** — L, `MB`, 6×4
@@ -766,7 +766,7 @@ SELECT average(value) AS jvmCpu FROM JvmCpuRecentUtilization FACET host TIMESERI
 SELECT latest(value) AS bytesUsed, max(value) AS peakBytes FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool ORDER BY peakBytes DESC LIMIT 100
 ```
 
----
+&#x200B;---
 
 ### 11.8 Executive / NOC Wandplatte
 
@@ -849,7 +849,7 @@ SELECT count(*) AS requests FROM Transaction WHERE hostTierPrefix != '' FACET ho
 
 **W10 ・ SLO Hinweis** — Text-Widget, 12×1.
 
----
+&#x200B;---
 
 ### Verhältnisse &amp; Headroom Board (Formula Showcase)
 
@@ -995,13 +995,13 @@ Formel (Burn-Rate: 1.0 = Budget genau planmäßig verbrauchen):
 (errors / total) / 0.001
 ```
 
----
+&#x200B;---
 
 ### Service-Explorer (variablengesteuert)
 
 **Ziel:** eine Pinnwand, auf die jedes Team auf _seinen Service_ Umgebung verweisen kann.
 
-> [!WARNING]
+&#x200B;> [!WARNING]
 > Siehe die **aktuelle Build-Beschränkung** in [Tutorial 3, Schritt 8.7](#87-make-dashboards-reusable-with-variables): `{{variables}}` in Widget SQL kann noch nicht in der Vorschau angezeigt oder gespeichert werden. Bis dies behoben ist, ersetzen Sie jedes `{{…}}` durch ein Literal (z. B. `'checkout'`) und verwenden Sie _Duplizieren_ um die Pinnwand pro Dienst zu klonen. Das folgende Design ist bereit für die Ersetzung, wenn End-to-End unterstützt wird.
 
 **Variablen**

@@ -109,7 +109,7 @@ Jede kuratierte Entität umschließt eine OpenTelemetry-Metrik mit dem richtigen
 | `JvmCpuRecentUtilization` | JVM-Prozess-CPU | % |         | 1-minütiger Rollup |
 | `DispatcherRequestRate` | AEM Dispatcher-HTTP-Anfragen | Erf/Sek | ✔ |                                              |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > JVM-Speichermetriken werden **pro Speicherpool** gemeldet, sodass die `JvmHeapUsed`-/`JvmHeapLimit`-Durchschnittswerte der Pools `average(value)` werden. Verwenden Sie `FACET host, pool` für eine exakte Ansicht pro Pool.
 
 ### `SpanBreakdown`: voraggregierte Transaktionszusammensetzung
