@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: 'Tutorial 1: Erste Abfragen'
+description: Schreiben Sie Ihre ersten SQL-Abfragen mit der Observability Insights-Telemetrie.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '576'
 ht-degree: 0%
 ---
+
 ## Tutorial 1: Erste Abfragen {#tutorial-1-your-first-queries}
 
 Willkommen bei SQL. In diesem Tutorial schreiben Sie Ihre ersten Abfragen, steuern das Zeitfenster, zeichnen Trends auf, filtern und gruppieren die Ergebnisse und legen Ihr erstes Diagramm auf einem Dashboard ab. Jeder Schritt baut auf dem vorherigen auf.
@@ -32,7 +35,8 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Die Zeilen werden nach der ersten Spalte in absteigender Reihenfolge sortiert. Wenn Sie also zuerst `timestamp`, erhalten Sie die neuesten Anfragen am Anfang.
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > SQL hat keine `SELECT *`. Durch die Auflistung von Attributen werden Ergebnisse klein und lesbar gehalten. Das [Datenwörterbuch](#data-dictionary) und die automatische Vervollständigung im Editor zeigen, was verfügbar ist.
 
 ### Daten aggregieren
@@ -65,7 +69,8 @@ Trennt Aggregate durch Kommas und benennt jedes mit `AS`:
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Aliase werden zu Spaltenüberschriften und Legendenbeschriftungen, auf die Sie in `ORDER BY` verweisen. Gewöhnen Sie sich an, jedes Aggregat zu benennen.
 
 ### Zeitfenster festlegen
@@ -84,7 +89,8 @@ SELECT count(*) AS requests FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 Einheiten können `second`, `minute`, `hour`, `day` oder `week` sein. Das Fenster kann höchstens 31 Tage betragen.
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > In **Erkunden** und **Dashboards** steuert die **Zeitauswahl** oben auf der Seite das Fenster und überschreibt `SINCE`/`UNTIL`. Um einen anderen Punkt anzuzeigen, ändern Sie die Auswahl. Der Rest dieses Handbuchs lässt `SINCE` aus diesem Grund aus Dashboard-Abfragen aus.
 
 ### Trends mit `TIMESERIES` grafisch darstellen
@@ -121,7 +127,8 @@ Verwenden Sie `LIKE` mit `%` für Teilübereinstimmungen:
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Bei Zeichenfolgenwerten wird zwischen Groß- und Kleinschreibung unterschieden und einfache Anführungszeichen verwendet: `'Error'`, nicht `"Error"` oder `'error'`. Ersetzen Sie `checkout` durch einen Dienst Ihres Mandanten. Im nächsten Schritt erfahren Sie, wie Sie sie auflisten.
 
 ### Mit `FACET` gruppieren

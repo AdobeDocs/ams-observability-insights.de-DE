@@ -1,10 +1,13 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: SQL-Abfragebeispiele
+description: Erkunden Sie SQL-Abfragebeispiele für die Observability Insights-Telemetrie.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '306'
 ht-degree: 10%
 ---
-### SQL-Abfragebeispiele
+
+## SQL-Abfragebeispiele
 
 Hier ein vollständiges Beispiel. Für diese Abfrage:
 
@@ -89,7 +92,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 <a id="what-sql-doesnt-do"></a>
 
-### Was SQL nicht tut
+## Was SQL nicht tut
 
 SQL ist bewusst klein. Dadurch bleiben Abfragen sicher, schnell und Mandanten-isoliert. Wenn Sie eine dieser Funktionen benötigen, verwenden Sie die Alternative .
 

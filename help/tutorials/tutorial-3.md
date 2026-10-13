@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: 'Tutorial 3: Erweitern des Dashboards'
+description: Erstellen Sie Dashboards mit Variablen, Formeln und mehreren Widgets in Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '902'
 ht-degree: 3%
 ---
+
 ## Tutorial 3: Erweitern des Dashboards {#tutorial-3-advance-your-dashboarding}
 
 In diesem Tutorial erstellen Sie die Komponenten eines produktionsfähigen Dashboards: Benutzererlebnisbewertungen, Zählerraten, Fallgruppierung, Histogramme, KPI-Kacheln mit Schwellenwerten, Abschnitten, Formel-Widgets und Variablen.
@@ -38,7 +41,8 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-&#x200B;> [!WARNING]
+>[!WARNING]
+>
 > Facetten immer nach `host` (und bei Festplatten nach `device`) `rate()` oder nach einem Host filtern. Andernfalls werden die Messwerte von verschiedenen Hosts gemischt und das Ergebnis ist bedeutungslos.
 
 Um eine **Anfrage**-Rate aus Traces abzurufen, zählen Sie Anfragen stattdessen in festen Buckets. Dies ergibt Anfragen pro Minute:
@@ -146,7 +150,8 @@ Regeln für Formelabfragen:
 | Jeweils eine Metrik | Jede Abfrage gibt genau ein Aggregat und keine `FACET` zurück |
 | Fehlende Daten | Ein fehlender Wert oder eine Division durch null erzeugt einen leeren Punkt, nie `Infinity` oder `NaN` |
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Verwenden Sie `TIMESERIES AUTO` in jeder Abfrage einer Zeitreihenformel. Da die Abfragen ein Fenster gemeinsam haben, werden sie immer auf dieselbe Bucket-Größe aufgelöst.
 
 ### Wiederverwendbarkeit von Dashboards mit Variablen
@@ -187,8 +192,9 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Optionen werden aktualisiert, wenn sich der Mandant oder die Zeitauswahl ändert und sie alphabetisch sortiert werden. Wenn die aktuelle Auswahl nicht mehr gültig ist, werden der erste Wert (Einzelauswahl) oder alle Werte (Mehrfachauswahl) automatisch ausgewählt. Die Abfrage einer Variablen kann nicht auf andere Variablen verweisen.
 
-&#x200B;> [!WARNING]
-> **Aktuelle Build-Einschränkung.** Die Ersetzung erfolgt im Dashboard-Raster, aber die Vorschau **Widget hinzufügen** und die **Server-seitige Speicherprüfung** erhalten das `{{name}}`-Token und lehnen es mit _unerwarteten Zeichen &#39;&lbrace;&#39;_ ab. In der Praxis:
+>[!WARNING]
+>
+> **Aktuelle Build-Einschränkung.** Die Ersetzung erfolgt im Dashboard-Raster, aber die Vorschau **Widget hinzufügen** und die **Server-seitige Speicherprüfung** erhalten das Roh-`{{name}}`-Token und lehnen es mit `Unexpected character '{'` ab. In der Praxis:
 >
 > - `{{variables}}` in **Widget-** und **Text-Widgets** arbeiten von Anfang bis Ende.
 > - `{{variables}}` innerhalb **Widget SQL** werden nach einem **Import** korrekt dargestellt, aber das Dashboard kann nicht **gespeichert** solange solche Widgets vorhanden sind.

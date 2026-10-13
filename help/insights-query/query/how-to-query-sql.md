@@ -1,9 +1,12 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: Abfragen mit SQL
+description: Erfahren Sie, wie Sie SQL-Abfragen in Observability Insights schreiben und ausführen.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '554'
 ht-degree: 1%
 ---
+
 ## Abfrage mit SQL: Abfragemechanik {#how-to-query-with-sql-the-mechanics-of-querying}
 
 Bevor Sie ein Tool verwenden, sollten Sie wissen, wie es funktioniert. In diesem Dokument erfahren Sie, wie Sie Ihre Daten untersuchen, was beim Ausführen einer Abfrage geschieht und wie Sie Beispielabfragen von einfach bis komplex durchlaufen.
@@ -12,7 +15,8 @@ Bevor Sie ein Tool verwenden, sollten Sie wissen, wie es funktioniert. In diesem
 
 Die beste Möglichkeit, SQL zu verwenden, besteht darin, **Erkunden** zu öffnen und es mit Ihren eigenen Daten zu versuchen.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > SQL ist schreibgeschützt. Es können keine Daten geändert oder gelöscht werden, und jede Abfrage bezieht sich auf Ihren Mandanten.
 
 1. **Kunden auswählen** Im Mandantenschalter oben in der App benötigt SQL einen einzelnen Mandanten.
@@ -37,7 +41,8 @@ FROM Transaction SELECT count(*) FACET service
 
 Dies zählt Anfragen pro Service und zeigt an, welche Services Berichte erstellen.
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > **Entdecken vor dem Erstellen.** Die Verfügbarkeit von Attributen hängt davon ab, wie jeder Service instrumentiert ist. Führen Sie [Discovery-Abfragen](#101-data-discovery) zuerst auf einem neuen Mandanten aus, um zu sehen, welche Services, Hosts, Attribute und Metriken tatsächlich Daten enthalten.
 
 ### Ausführen einer Abfrage
@@ -87,5 +92,6 @@ Jede Abfrage gibt eine von vier Formen zurück. Die Form entscheidet, welche Dia
 | **Erkunden** | Die globale Zeitauswahl. `SINCE`/`UNTIL` werden ignoriert, wenn ein Auswahlbereich aktiv ist. |
 | **API ohne expliziten Bereich** | `SINCE`/`UNTIL` in der Abfrage, standardmäßig die letzte Stunde. |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Da die Auswahl in Dashboards und beim Erkunden gewinnt, werden in diesem Handbuch in der Regel `SINCE` aus Dashboard-Abfragen ausgeschlossen. Für die Abfragen sollte immer eine Zeitauswahl definiert werden.

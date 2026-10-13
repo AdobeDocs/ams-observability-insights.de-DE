@@ -1,9 +1,12 @@
 ---
-source-git-commit: 4949fcad799260aa73354a8c0b9d79e6394cb257
+title: Datenwörterbuch
+description: Referenzieren Sie die Entitäten und Attribute, die für SQL-Abfragen von Observability Insights verfügbar sind.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '598'
 ht-degree: 21%
 ---
+
 ## Datenwörterbuch {#data-dictionary}
 
 Dies sind alle Entitäten und Attribute, die Sie abfragen können. Der Live-Katalog mit Beschreibungen befindet sich auch im Bedienfeld **Handbuch zur Abfrage** unter „Erkunden“ und im Dialogfeld Widget hinzufügen .
@@ -109,7 +112,8 @@ Jede kuratierte Entität umschließt eine OpenTelemetry-Metrik mit dem richtigen
 | `JvmCpuRecentUtilization` | JVM-Prozess-CPU | % |         | 1-minütiger Rollup |
 | `DispatcherRequestRate` | AEM Dispatcher-HTTP-Anfragen | Erf/Sek | ✔ |                                              |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > JVM-Speichermetriken werden **pro Speicherpool** gemeldet, sodass die `JvmHeapUsed`-/`JvmHeapLimit`-Durchschnittswerte der Pools `average(value)` werden. Verwenden Sie `FACET host, pool` für eine exakte Ansicht pro Pool.
 
 ### `SpanBreakdown`: voraggregierte Transaktionszusammensetzung

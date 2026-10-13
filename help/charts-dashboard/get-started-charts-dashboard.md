@@ -1,9 +1,12 @@
 ---
-source-git-commit: 05ed98c07602488843c52cd262af2d8cc204fef1
+title: Erste Schritte mit Diagrammen und Dashboards
+description: Erfahren Sie, wie Sie Observability Insights-Daten mit Diagrammen und Dashboards visualisieren können.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '309'
 ht-degree: 3%
 ---
+
 ## Diagramme und Dashboards: Visualisieren Ihrer Daten {#charts-and-dashboards-visualizing-your-data}
 
 Bei Abfragen werden die benötigten Informationen gefunden. Diagramme und Dashboards machen diese Informationen für Ihr Unternehmen nützlich. Dieses Dokument zeigt, wie SQL-Ergebnisse zu Diagrammen werden und wie Dashboards erstellt, organisiert und freigegeben werden.

@@ -1,10 +1,13 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: Erste Schritte mit SQL
+description: Erfahren Sie, wie Sie die Observability Insights-Telemetrie mit SQL abfragen.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '684'
 ht-degree: 1%
 ---
-# Los geht&#39;s
+
+# Erste Schritte
 
 **Adobe Observability Insights Query Language (SQL)** - Abfrage, Diagramm und Dashboard Ihrer Telemetrie in Adobe Observability Insights.
 
@@ -13,7 +16,8 @@ ht-degree: 1%
 | **Gilt für** | Insights-Benutzeroberfläche → **Erkunden** und **Dashboards** (benutzerdefinierte Dashboards) |
 | **Zielgruppe** | Ingenieure, SREs und Power-User, die SQL kennen |
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Jeder Code-Block mit der Kennzeichnung `sql` ist eine SQL-Abfrage, die Sie direkt in **Erkunden → SQL** oder in **Dashboards → Widget hinzufügen → SQL** einfügen können.
 
 ## Erste Schritte mit SQL: die Sprache Ihrer Telemetrie {#get-started-with-sql-the-language-of-your-telemetry}
@@ -38,7 +42,8 @@ SQL verwenden für:
 
 SQL unterstützt sowohl **Ereignisabfragen**, die einzelne Anfragezeilen zurückgeben, als auch **Aggregatabfragen**, die Gesamtsummen, Perzentile, Raten, Aufschlüsselungen und Zeitreihen zurückgeben.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Die Vorlagen in **Dashboards → Dashboard erstellen** werden vollständig aus SQL erstellt. Öffnen Sie ein beliebiges Vorlagen-Widget mit dem Stiftsymbol, um die zugehörige Abfrage anzuzeigen und daraus zu lernen.
 
 ### Was Sie abfragen können
@@ -52,7 +57,8 @@ SQL kann vier Datenfamilien abfragen. Die vollständige Liste finden Sie unter [
 | **Generische Metriken** | `MetricGauge`, `MetricSum` | Beliebige OpenTelemetry-Metriken nach Name, Metrikerkennung |
 | **Voraggregierte span-Komposition** | `SpanBreakdown` | Welche untergeordneten Vorgänge eine Transaktion bilden |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Protokolle, Warnhinweisdefinitionen und Inventarbeziehungen sind nicht verfügbar.
 
 ### Verwendung von SQL

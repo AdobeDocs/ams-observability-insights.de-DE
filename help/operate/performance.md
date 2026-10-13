@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Leistung
+description: Verbessern Sie die Leistung von Abfragen, Diagrammen und Dashboards in Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '217'
+source-wordcount: '227'
 ht-degree: 3%
 ---
+
 ## Leistung {#performance}
 
 Jede Abfrage wird mit einem 15-Sekunden-Timeout und einem Byte-Read-Budget ausgeführt. In diesem Dokument wird erläutert, wie Observability Insights Abfragen automatisch beschleunigt und wie Dashboards erstellt werden, die zu jedem Zeitpunkt schnell bleiben.

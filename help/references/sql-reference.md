@@ -1,9 +1,12 @@
 ---
-source-git-commit: 4949fcad799260aa73354a8c0b9d79e6394cb257
+title: SQL-Referenz
+description: Verweisen Sie auf die SQL-Syntax, -Klauseln und -Funktionen, die von Observability Insights unterstützt werden.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '1479'
-ht-degree: 10%
+source-wordcount: '1492'
+ht-degree: 9%
 ---
+
 ## SQL-Referenz {#sql-reference}
 
 Diese Referenz behandelt SQL-Syntax, -Klauseln, -Funktionen und -Operatoren. Erweitern Sie jeden Eintrag, um Details und Beispiele anzuzeigen.
@@ -28,7 +31,8 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Die oben genannten `--` Anmerkungen dienen nur der Dokumentation. SQL selbst akzeptiert keine Kommentare.
 
 ### Erforderliche Klauseln
@@ -154,7 +158,8 @@ SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, pe
 SELECT count(*) FROM Transaction FACET urlPath LIMIT 50
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Legen Sie immer eine `LIMIT` für abfragebasierte Variablen und Facetten mit hoher Kardinalität fest (`urlPath`, `traceId`, `jcr.path`, `url`).
 
 </details>
@@ -194,7 +199,8 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 - Das Fenster darf nicht länger **31 Tage** sein (_Zeitraum darf 31 Tage nicht überschreiten_).
 - Absolute Datumswerte (`SINCE '2026-01-01'`) und `TODAY`/`YESTERDAY` werden nicht unterstützt.
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > In Dashboards und im Explorer überschreibt **Zeitauswahl** `SINCE` und `UNTIL`. Siehe [Zeitfensterpriorität](#time-window-precedence).
 
 </details>
@@ -224,7 +230,8 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction TIMESERIES AUTO
 SELECT count(*) FROM Transaction TIMESERIES 1 hour SINCE 1 day ago
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Bevorzugte `AUTO` in Dashboards. Es hat ungefähr 120 Punkte, was auch immer die Zeitauswahl sagt. Außerdem werden „zersplitterte“ Zeilen pro Host vermieden, da Host-Metriken etwa alle 90 Sekunden abgekratzt werden.
 
 </details>
@@ -431,10 +438,11 @@ Die Rate pro Sekunde eines **kumulativen Zählers**. In jedem Bucket nimmt `rate
 SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES AUTO
 ```
 
-- Funktioniert nur bei Zählerentitäten (✔ im [Datenwörterbuch) &#x200B;](#53-curated-metric-entities).
+- Funktioniert nur bei Zählerentitäten (✔ im [Datenwörterbuch) ](#53-curated-metric-entities).
 - Erfordert `TIMESERIES` und muss das **Aggregat**. `FILTER` ist nicht erlaubt.
 
-&#x200B;> [!WARNING]
+>[!WARNING]
+>
 > Immer `FACET host` oder auf einen einzelnen Host filtern. Eine facettenlose `rate()` über viele Hosts hinweg vergleicht die Zähler verschiedener Hosts und erzeugt bedeutungslose Zahlen. Datenträgerzähler sind pro Gerät, daher ist `FACET host, device` am genauesten.
 
 </details>
@@ -508,14 +516,16 @@ Funktionsbeschränkungen auf einen Blick:
 SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND NOT host LIKE '%dispatcher%' AND http.method IN ('GET', 'POST')
 ```
 
-&#x200B;> [!WARNING]
+>[!WARNING]
+>
 > `attr = NULL` Fehler. Verwenden von `attr IS NULL`.
 
 ### Typ-Handling: leer vs. NULL
 
 Jedes Attribut hat einen Typ im Katalog: `string`, `number`, `boolean` oder `timestamp`. Der SQL-Typ vergleicht Funktionen (z. B. wird `average(service)` zurückgewiesen). Es sind keine Typkonvertierungsfunktionen erforderlich oder verfügbar.
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > **Leer vs. NULL.** Die meisten Zeichenfolgenattribute stammen aus OpenTelemetry-Attributzuordnungen, bei denen ein _fehlender_-Schlüssel als leere `''` und nicht als `NULL` gelesen wird. Um nur Bereiche beizubehalten, die ein -Attribut tragen, verwenden Sie **`attr != ''`** statt `IS NOT NULL`. Numerische Attribute wie `http.statusCode` werden in der Abwesenheit wirklich `NULL`, sodass `IS NOT NULL` für sie funktioniert.
 
 ```sql

@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Fehlerbehebung
+description: Fehlerbehebung bei SQL-Abfragen, Diagrammen und Dashboards in Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '337'
 ht-degree: 6%
 ---
+
 ## Fehlerbehebung {#troubleshooting}
 
 Fehlermeldungen werden unter dem Editor angezeigt, wenn Sie **Abfrage** oder **ausführen** und im Widget selbst in einem Dashboard. Suchen Sie die Nachricht in der ersten Spalte.

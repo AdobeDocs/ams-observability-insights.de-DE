@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: 'Tutorial 2: Steuern Ihrer Daten'
+description: Erfahren Sie, wie Sie Abfrageergebnisse in Observability Insights filtern, gruppieren und steuern können.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '344'
+source-wordcount: '361'
 ht-degree: 0%
 ---
+
 ## Tutorial 2: Steuern Ihrer Daten {#tutorial-2-control-your-data}
 
 In diesem Tutorial lernen Sie die Funktionen und Klauseln kennen, die aus rohen Zahlen Antworten machen: eindeutige Zahlen, aktuelle Werte, Prozentsätze, Perzentile, Platzhalter, Sortierung und mehrdimensionale Gruppierung.
@@ -66,7 +69,8 @@ Durchschnittswerte blenden Ausreißer aus. Die Perzentile geben an, was die meis
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > P50, P95 und P99 von `Transaction.duration` werden aus Datenaggregationen über lange Fenster bereitgestellt, sodass sie für wöchentliche Ansichten schnell bleiben.
 
 ### Ergebnisse mit Kennzeichnungen lesbar machen
@@ -77,7 +81,8 @@ Verwenden Sie `AS` mit einfachen Anführungszeichen für Beschriftungen, die Lee
 SELECT count(*) AS 'Requests', percentile(duration, 95) AS 'p95 (ms)' FROM Transaction FACET service
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Aliase gelten nur für `SELECT`. Facettenspalten sind immer mit dem Attributnamen gekennzeichnet.
 
 ### Muster und Listen abgleichen
@@ -100,7 +105,8 @@ Abgleich mit einer Liste mit `IN` und `NOT IN` (bis zu 100 Werte):
 SELECT count(*) AS requests FROM Transaction WHERE http.method IN ('POST', 'PUT', 'DELETE') FACET service
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > SQL hat keine regulären Ausdrücke (`RLIKE`). Kombinieren Sie `LIKE` mit `OR` oder verwenden Sie `IN`.
 
 ### Mit `ORDER BY` sortieren und ordnen
@@ -117,7 +123,8 @@ Oder zuerst die am wenigsten genutzten Dienste:
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Es gibt keine `HAVING`. Um nur „Besetzt“-Vorgänge zu finden, reihen Sie `requests` nach und behalten Sie die obersten N bei, oder fügen Sie eine `WHERE` hinzu, die Geräusche beseitigt (z. B. `WHERE http.method != 'OPTIONS'`).
 
 ### Nach mehreren Attributen gruppieren

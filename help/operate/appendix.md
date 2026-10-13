@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Anhang
+description: Referenz-Zusatzinformationen für SQL-Abfragen und Dashboards zu Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '145'
 ht-degree: 7%
 ---
+
 ## Anhang {#appendix}
 
 **In diesem Dokument:** [14.1 Beschränkungen](#141-limits) ・ [14.2 Dateiformat exportieren](#142-export-file-format) ・ [14.3 One-Page Cheat Sheet](#143-one-page-cheat-sheet)
