@@ -1,7 +1,7 @@
 ---
 title: Datenwörterbuch
 description: Referenzieren Sie die Entitäten und Attribute, die für SQL-Abfragen von Observability Insights verfügbar sind.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
 source-wordcount: '598'
 ht-degree: 21%
@@ -14,8 +14,8 @@ Dies sind alle Entitäten und Attribute, die Sie abfragen können. Der Live-Kata
 ### Entitäten verfolgen
 
 | Entität | Enthält | Fester Umfang | Datenaggregationen |
-| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------ |
-| `Transaction` | Eingehende Server-Anfragen | `kind = Server` | 1 m / 5 m / 1 h ([Performance](#performance)) |
+| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------------------- |
+| `Transaction` | Eingehende Server-Anfragen | `kind = Server` | 1 m / 5 m / 1 h ([Performance](../operate/performance.md)) |
 | `AppRequest` | Eingehende Server **und** Nachrichten-Privatkunden-Anfragen | `kind IN (Server, Consumer)` | — |
 | `Span` | Alle Bereiche (Server, Client, Produzent, Verbraucher, intern) | — | — |
 

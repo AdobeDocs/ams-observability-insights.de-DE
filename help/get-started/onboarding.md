@@ -12,9 +12,9 @@ feature_v2:
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
     internal-label: Admin
-source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
+source-git-commit: d8c86bf4873a9eef6ce9bbcca5a545aa4e862e5f
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '518'
 ht-degree: 0%
 ---
 
@@ -65,6 +65,6 @@ Die Dokumentation gliedert sich in vier Bereiche. Verwenden Sie die folgenden Be
 
 **Erste Schritte** - Dieser Abschnitt. Behandelt Zugriff, Kontobereitstellung, Überwachungsumfang und Datenspeicherung.
 
-**[Verwenden von Observability Insights](../use-observability-insights.md)** - Aufgabenorientierte Anleitung für die tägliche Untersuchung. Verwenden Sie [Anwendungen](../applications.md) wenn das Symptom anwendungsbezogen ist: langsame Seiten, Fehlerspitzen oder instabile Transaktionen. Verwenden Sie [Hosts](../hosts.md), wenn Sie feststellen müssen, ob der Ressourcendruck auf Host-Ebene - CPU, Arbeitsspeicher, Festplatte oder Netzwerk - erklärt, was Sie in Anwendungen sehen. Eine schrittweise Anleitung zur Untersuchung von [&#x200B; finden Sie unter &quot;](../use-cases/investigate-application-issues.md) untersuchen“ und [Infrastrukturprobleme untersuchen](../use-cases/investigate-infrastructure-issues.md).
+**[Verwenden von Observability Insights](../use-observability-insights.md)** - Aufgabenorientierte Anleitung für die tägliche Untersuchung. Verwenden Sie [Anwendungen](../applications.md) wenn das Symptom anwendungsbezogen ist: langsame Seiten, Fehlerspitzen oder instabile Transaktionen. Verwenden Sie [Hosts](../hosts.md), wenn Sie feststellen müssen, ob der Ressourcendruck auf Host-Ebene - CPU, Arbeitsspeicher, Festplatte oder Netzwerk - erklärt, was Sie in Anwendungen sehen.
 
 **[Häufig gestellte Fragen](../troubleshooting/common-questions.md)** - Häufig gestellte Fragen und Support-orientierte Einstiegspunkte für den Fall, dass Sie sich nicht sicher sind, wo Sie anfangen sollen, oder während eines aktiven Vorfalls schnelle Antworten benötigen.
