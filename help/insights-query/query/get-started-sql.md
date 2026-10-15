@@ -1,9 +1,9 @@
 ---
 title: Erste Schritte mit SQL
 description: Erfahren Sie, wie Sie die Observability Insights-Telemetrie mit SQL abfragen.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '687'
 ht-degree: 1%
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 | **Gilt für** | Insights-Benutzeroberfläche → **Erkunden** und **Dashboards** (benutzerdefinierte Dashboards) |
 | **Zielgruppe** | Ingenieure, SREs und Power-User, die SQL kennen |
 
->[!TIP]
+> **Tipp**
 >
 > Jeder Code-Block mit der Kennzeichnung `sql` ist eine SQL-Abfrage, die Sie direkt in **Erkunden → SQL** oder in **Dashboards → Widget hinzufügen → SQL** einfügen können.
 
@@ -42,13 +42,13 @@ SQL verwenden für:
 
 SQL unterstützt sowohl **Ereignisabfragen**, die einzelne Anfragezeilen zurückgeben, als auch **Aggregatabfragen**, die Gesamtsummen, Perzentile, Raten, Aufschlüsselungen und Zeitreihen zurückgeben.
 
->[!TIP]
+> **Tipp**
 >
 > Die Vorlagen in **Dashboards → Dashboard erstellen** werden vollständig aus SQL erstellt. Öffnen Sie ein beliebiges Vorlagen-Widget mit dem Stiftsymbol, um die zugehörige Abfrage anzuzeigen und daraus zu lernen.
 
 ### Was Sie abfragen können
 
-SQL kann vier Datenfamilien abfragen. Die vollständige Liste finden Sie unter [Datenwörterbuch](#data-dictionary).
+SQL kann vier Datenfamilien abfragen. Die vollständige Liste finden Sie unter [Datenwörterbuch](/help/references/data-dictionary.md).
 
 | Familie | Entitäten | Typische Fragen |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
@@ -57,7 +57,7 @@ SQL kann vier Datenfamilien abfragen. Die vollständige Liste finden Sie unter [
 | **Generische Metriken** | `MetricGauge`, `MetricSum` | Beliebige OpenTelemetry-Metriken nach Name, Metrikerkennung |
 | **Voraggregierte span-Komposition** | `SpanBreakdown` | Welche untergeordneten Vorgänge eine Transaktion bilden |
 
->[!NOTE]
+> **Hinweis**
 >
 > Protokolle, Warnhinweisdefinitionen und Inventarbeziehungen sind nicht verfügbar.
 
@@ -97,7 +97,7 @@ FROM    Entity
 Im Folgenden finden Sie die SQL-Regeln:
 
 | Regel | Details |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Erforderliche Klauseln** | `SELECT` und `FROM` sind erforderlich. Jede andere Klausel ist optional. Sie können mit einem der folgenden Elemente beginnen: `FROM Transaction SELECT count(*)` ist auch gültig. |
 | **Klauselreihenfolge** | Die Klauseln nach `FROM` können in beliebiger Reihenfolge angezeigt werden. Jede Klausel darf nur einmal angezeigt werden. |
 | **Abfragengröße** | Eine Abfrage muss 4 KB oder weniger betragen. |
@@ -106,5 +106,5 @@ Im Folgenden finden Sie die SQL-Regeln:
 | **Literale** | Zeichenfolgen, Zahlen (einschließlich Negativ- und Dezimalzahlen), `TRUE`, `FALSE`, `NULL`. |
 | **Attributnamen** | Namen können Buchstaben, Ziffern, `_` und `.` enthalten (zum Beispiel `http.statusCode`). Es sind keine Backticks erforderlich. |
 | **Aggregate vs. Attribute** | Bei einer Abfrage werden entweder Rohattribute (eine Ereignisliste) oder Aggregate ausgewählt, aber nie beides. Verwenden Sie zum Gruppieren `FACET`. |
-| **Zeitfenster** | Der Standardwert ist die letzte Stunde. Die maximale Wartezeit beträgt 31 Tage. In Dashboards und im Explorer **die** das Fenster (siehe [Zeitfenster](#time-window-precedence)). |
-| **Nicht unterstützt** | Semikolons, Kommentare, Unterabfragen, Joins, `SELECT *`, Mathematik zwischen Attributen in `SELECT`, `HAVING`, `COMPARE WITH`. Siehe [Was SQL nicht tut](#what-sql-doesnt-do) für Alternativen. |
+| **Zeitfenster** | Der Standardwert ist die letzte Stunde. Die maximale Wartezeit beträgt 31 Tage. In Dashboards und im Explorer **die** das Fenster (siehe [Zeitfenster](how-to-query-sql.md#time-window-precedence)). |
+| **Nicht unterstützt** | Semikolons, Kommentare, Unterabfragen, Joins, `SELECT *`, Mathematik zwischen Attributen in `SELECT`, `HAVING`, `COMPARE WITH`. Siehe [Was SQL nicht tut](sql-query-examples.md#what-sql-doesnt-do) für Alternativen. |

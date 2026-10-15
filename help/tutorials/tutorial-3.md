@@ -1,17 +1,15 @@
 ---
 title: 'Tutorial 3: Erweitern des Dashboards'
 description: Erstellen Sie Dashboards mit Variablen, Formeln und mehreren Widgets in Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '902'
-ht-degree: 3%
+source-wordcount: '879'
+ht-degree: 4%
 ---
 
 ## Tutorial 3: Erweitern des Dashboards {#tutorial-3-advance-your-dashboarding}
 
 In diesem Tutorial erstellen Sie die Komponenten eines produktionsfähigen Dashboards: Benutzererlebnisbewertungen, Zählerraten, Fallgruppierung, Histogramme, KPI-Kacheln mit Schwellenwerten, Abschnitten, Formel-Widgets und Variablen.
-
-**In diesem Tutorial:** [8.1 apdex](#81-score-user-experience-with-apdex) ・ [8.2 rate](#82-turn-counters-into-rates-with-rate) ・ [8.3 Cases](#83-group-values-into-cases-with-filter) ・ [8.4 Histogramme](#84-build-a-latency-histogram) ・ [8.5 KPI Kacheln und Abschnitte](#85-build-kpi-tiles-and-sections) ・ [8.6 Formeln](#86-combine-queries-with-formula-widgets) ・ [8.7 Variablen](#87-make-dashboards-reusable-with-variables) ・ [8.8](#88-put-it-together)
 
 ### Bewerten des Benutzererlebnisses mit `apdex`
 
@@ -29,7 +27,7 @@ SELECT apdex(duration, 500) AS apdex FROM Transaction FACET service TIMESERIES A
 
 Platzieren Sie sie in einem **Zahl**-Widget mit Schwellenwerten `0 → Red`, `0.7 → Amber`, `0.85 → Green`. Die höchste passende Band gewinnt, sodass niedrige Werte rot bleiben.
 
-### 8.2 Zähler in Tarife mit `rate` umwandeln
+### Zähler mit `rate` in Tarife umwandeln
 
 Zählerentitäten (✔ im [Datenwörterbuch](#53-curated-metric-entities)) speichern immer höhere Summen. `rate(value)` konvertiert sie in Werte pro Sekunde. Es muss `TIMESERIES` sein, und es muss das einzige Aggregat sein:
 
@@ -41,7 +39,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
->[!WARNING]
+> **Warnung**
 >
 > Facetten immer nach `host` (und bei Festplatten nach `device`) `rate()` oder nach einem Host filtern. Andernfalls werden die Messwerte von verschiedenen Hosts gemischt und das Ergebnis ist bedeutungslos.
 
@@ -192,7 +190,7 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Optionen werden aktualisiert, wenn sich der Mandant oder die Zeitauswahl ändert und sie alphabetisch sortiert werden. Wenn die aktuelle Auswahl nicht mehr gültig ist, werden der erste Wert (Einzelauswahl) oder alle Werte (Mehrfachauswahl) automatisch ausgewählt. Die Abfrage einer Variablen kann nicht auf andere Variablen verweisen.
 
->[!WARNING]
+> **Warnung**
 >
 > **Aktuelle Build-Einschränkung.** Die Ersetzung erfolgt im Dashboard-Raster, aber die Vorschau **Widget hinzufügen** und die **Server-seitige Speicherprüfung** erhalten das Roh-`{{name}}`-Token und lehnen es mit `Unexpected character '{'` ab. In der Praxis:
 >
@@ -203,4 +201,4 @@ Optionen werden aktualisiert, wenn sich der Mandant oder die Zeitauswahl ändert
 
 ### Bauen Sie es zusammen
 
-Jetzt werden alle Bausteine im [Dashboard-Blueprints“ verwendet](#dashboard-blueprints) KPI-Kacheln mit Schwellenwerten, Abschnitten, Perzentilen, Apdex, Raten, Fallspalten, Histogrammen, Formeln und Variablen. Die Blueprints zeigen, wie sie zu vollständigen Golden-Signal-, Fehler-Triage-, AEM-, Infrastruktur- und JVM-Dashboards kombiniert werden können.
+Jetzt werden alle Bausteine im [Dashboard-Blueprints“ verwendet](../examples/dashboard-blueprint.md) KPI-Kacheln mit Schwellenwerten, Abschnitten, Perzentilen, Apdex, Raten, Fallspalten, Histogrammen, Formeln und Variablen. Die Blueprints zeigen, wie sie zu vollständigen Golden-Signal-, Fehler-Triage-, AEM-, Infrastruktur- und JVM-Dashboards kombiniert werden können.

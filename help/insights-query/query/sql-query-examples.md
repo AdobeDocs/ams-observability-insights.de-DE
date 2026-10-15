@@ -1,9 +1,9 @@
 ---
 title: SQL-Abfragebeispiele
 description: Erkunden Sie SQL-Abfragebeispiele für die Observability Insights-Telemetrie.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 4ad45ae5cbb2a7b348fdad1cd2681a72be12f5eb
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '311'
 ht-degree: 10%
 ---
 
@@ -22,10 +22,9 @@ FROM Transaction SELECT percentile(duration, 95) AS p95 FACET service TIMESERIES
 
 Dadurch wird pro Dienst eine Zeile in einem Liniendiagramm erzeugt, wobei standardmäßig die 10 meistgenutzten Dienste angezeigt werden.
 
-Klicken Sie auf die einzelnen unten stehenden Beispiele, um sie zu erweitern.
+### Grundlegende Abfrage eingehender Anfragen
 
-<details>
-<summary><strong>Einfache Abfrage eingehender Anfragen</strong></summary>
++++Abfrage anzeigen
 
 Durchschnittliche Reaktionszeit aller eingehenden Anfragen in Millisekunden:
 
@@ -33,10 +32,11 @@ Durchschnittliche Reaktionszeit aller eingehenden Anfragen in Millisekunden:
 SELECT average(duration) FROM Transaction
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Attributnamen, die Punkte enthalten</strong></summary>
+### Attributnamen, die Punkte enthalten
+
++++Abfrage anzeigen
 
 Punktierte Namen müssen nicht in Anführungszeichen gesetzt werden:
 
@@ -44,10 +44,11 @@ Punktierte Namen müssen nicht in Anführungszeichen gesetzt werden:
 SELECT count(*) FROM Transaction WHERE http.statusCode >= 500 FACET http.route
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Abfrage gibt mehrere Spalten zurück</strong></summary>
+### Abfrage mit mehreren Spalten
+
++++Abfrage anzeigen
 
 Mehrere Aggregate in einer Abfrage werden zu Spalten in einer Tabelle:
 
@@ -55,10 +56,11 @@ Mehrere Aggregate in einer Abfrage werden zu Spalten in einer Tabelle:
 SELECT count(*) AS requests, average(duration) AS avgMs, percentile(duration, 95) AS p95, max(duration) AS maxMs FROM Transaction FACET service
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Bedingte Aggregate in einem Durchgang</strong></summary>
+### Bedingte Aggregate in einem Durchgang
+
++++Abfrage anzeigen
 
 Gesamt, Fehler und 5xx nebeneinander:
 
@@ -66,10 +68,11 @@ Gesamt, Fehler und 5xx nebeneinander:
 SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, count(*) FILTER (WHERE http.statusCode >= 500) AS http5xx FROM Transaction FACET service
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Abfrage einer kuratierten Metrik</strong></summary>
+### Abfrage einer kuratierten Metrik
+
++++Abfrage anzeigen
 
 Durchschnittliche CPU pro Host im Zeitverlauf:
 
@@ -77,10 +80,11 @@ Durchschnittliche CPU pro Host im Zeitverlauf:
 SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Abfragen einer OpenTelemetry-Metrik nach Namen</strong></summary>
+### Abfrage einer OpenTelemetry-Metrik nach Namen
+
++++Abfrage anzeigen
 
 Verwenden Sie `MetricGauge`/`MetricSum` für Metriken ohne kuratierte Entität:
 
@@ -88,7 +92,7 @@ Verwenden Sie `MetricGauge`/`MetricSum` für Metriken ohne kuratierte Entität:
 SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool
 ```
 
-</details>
++++
 
 <a id="what-sql-doesnt-do"></a>
 
@@ -97,15 +101,15 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 SQL ist bewusst klein. Dadurch bleiben Abfragen sicher, schnell und Mandanten-isoliert. Wenn Sie eine dieser Funktionen benötigen, verwenden Sie die Alternative .
 
 | Funktion | Status | Alternative |
-| ------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
+| ------------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `SELECT *` | Nicht unterstützt | Listen Sie die gewünschten Attribute auf: `SELECT timestamp, name, duration, traceId …`. |
 | Mischung von Rohattributen und Aggregaten | Nicht unterstützt | Verwenden Sie `FACET attr` oder `latest(attr)` / `earliest(attr)`. |
 | Mathematik in `SELECT` (`a - b`, `count(*) / 60`) | Nicht unterstützt | **Formel**-Widget (Dashboards). |
 | Joins und Unterabfragen | Nicht unterstützt | **Formel**-Widget oder zwei Widgets nebeneinander. |
 | `HAVING` | Nicht unterstützt | `ORDER BY alias` + `LIMIT`. |
 | `COMPARE WITH` | Nicht unterstützt | Ändern Sie die Zeitauswahl oder legen Sie zwei Widgets auf verschiedene Registerkarten. |
-| `FACET CASES` | Nicht unterstützt | Eine `count(*) FILTER (WHERE …)` Spalte pro Fall (siehe [Tutorial 3](#83-group-values-into-cases-with-filter)). |
-| `histogram()` | Nicht unterstützt | Spalten mit `FILTER` in Buckets (siehe [Tutorial 3](#84-build-a-latency-histogram)). |
+| `FACET CASES` | Nicht unterstützt | Eine `count(*) FILTER (WHERE …)` Spalte pro Fall (siehe [Tutorial 3](../../tutorials/tutorial-3.md#group-values-into-cases-with-filter)). |
+| `histogram()` | Nicht unterstützt | Spalten mit `FILTER` in Buckets (siehe [Tutorial 3](../../tutorials/tutorial-3.md#build-a-latency-histogram)). |
 | `uniques()` / `keyset()` | Nicht unterstützt | `FACET attr LIMIT n` listet verschiedene Werte auf. Discovery-Abfragen listen Metriken und ausgefüllte Attribute auf. |
 | `RLIKE` (Regex) | Nicht unterstützt | `LIKE` / `NOT LIKE` mit `%` und `_` Platzhaltern oder `IN (…)`. |
 | Kommentare (`--`, `//`, `/* */`) | Nicht unterstützt | Fügen Sie Notizen in den Widget-Titel oder ein **Text**-Widget ein. |

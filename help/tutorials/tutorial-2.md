@@ -1,17 +1,15 @@
 ---
 title: 'Tutorial 2: Steuern Ihrer Daten'
 description: Erfahren Sie, wie Sie Abfrageergebnisse in Observability Insights filtern, gruppieren und steuern können.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '337'
 ht-degree: 0%
 ---
 
 ## Tutorial 2: Steuern Ihrer Daten {#tutorial-2-control-your-data}
 
 In diesem Tutorial lernen Sie die Funktionen und Klauseln kennen, die aus rohen Zahlen Antworten machen: eindeutige Zahlen, aktuelle Werte, Prozentsätze, Perzentile, Platzhalter, Sortierung und mehrdimensionale Gruppierung.
-
-**In diesem Tutorial:** [7.1 uniqueCount](#71-count-distinct-values-with-uniquecount) ・ [7.2 neueste/früheste](#72-find-the-latest-and-earliest-values) ・ [7,3 Prozentsatz](#73-calculate-percentages) ・ [7,4 Perzentil](#74-understand-latency-with-percentile) ・ [7,5 Beschriftungen](#75-make-results-readable-with-labels) ・ [7,6 Platzhalter und Listen](#76-match-patterns-and-lists) ・ [7,7 Sortierung](#77-sort-and-rank-with-order-by) ・ [7,8 Mehrere Facetten](#78-group-by-several-attributes) ・ [7,9 Frühere Fenster](#79-look-at-a-past-window)
 
 ### Unterschiedliche Werte mit `uniqueCount` zählen
 
@@ -69,7 +67,7 @@ Durchschnittswerte blenden Ausreißer aus. Die Perzentile geben an, was die meis
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
->[!TIP]
+> **Tipp**
 >
 > P50, P95 und P99 von `Transaction.duration` werden aus Datenaggregationen über lange Fenster bereitgestellt, sodass sie für wöchentliche Ansichten schnell bleiben.
 
@@ -123,7 +121,7 @@ Oder zuerst die am wenigsten genutzten Dienste:
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
->[!TIP]
+> **Tipp**
 >
 > Es gibt keine `HAVING`. Um nur „Besetzt“-Vorgänge zu finden, reihen Sie `requests` nach und behalten Sie die obersten N bei, oder fügen Sie eine `WHERE` hinzu, die Geräusche beseitigt (z. B. `WHERE http.method != 'OPTIONS'`).
 

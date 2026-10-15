@@ -1,17 +1,15 @@
 ---
 title: 'Tutorial 4: Erweiterte Funktionen'
 description: Erfahren Sie, wie Sie erweiterte SQL-Funktionen zur Analyse der Observability Insights-Telemetrie verwenden.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '483'
 ht-degree: 1%
 ---
 
 ## Tutorial 4: Erweiterte Funktionen {#tutorial-4-advanced-functions}
 
 In diesem Tutorial werden die Funktionen und Entitäten behandelt, die für tiefer gehende Untersuchungen sorgen: Variabilität, Wachstum, „Worst Example“-Suchen, Anteil an der Gesamtsumme, Transaktionszusammensetzung und beliebige OpenTelemetry-Metriken.
-
-**In diesem Tutorial:** [9.1 stddev](#91-measure-consistency-with-stddev) ・ [9.2 Derivat](#92-spot-growth-with-derivative) ・ [9.3 Aktueller Rang](#93-find-the-worst-example-with-ranked-latest) ・ [9.4 ProzentOfTotal](#94-find-where-time-goes-with-percentoftotal) ・ [9.5 SpanBreakdown](#95-break-down-transactions-with-spanbreakdown) ・ [9.6 Beliebige Metriken](#96-discover-and-query-any-metric) ・ [9.7 Entität auswählen](#97-choose-the-right-trace-entity) ・ [9.8 Verschachtelte Aggregation](#98-work-around-nested-aggregation)
 
 ### Messen der Konsistenz mit `stddev`
 
@@ -124,9 +122,9 @@ SELECT count(*) AS calls, percentage(*, WHERE status = 'Error') AS errorPct, per
 Mit NRQL können Sie ein Aggregat mit einer Unterabfrage aggregieren, z. B. „der Durchschnitt der maximalen Werte pro Host“. SQL nicht. Im Folgenden finden Sie Alternativen:
 
 | Ziel | SQL-Ansatz |
-| --------------------------------------- | ---------------------------------------------------------- |
+| --------------------------------------- | -------------------------------------------------------------------- |
 | Fügen Sie einen Wert pro Gruppe ein und ordnen Sie dann die Gruppen ein | `FACET group` + `ORDER BY alias` + `LIMIT` |
-| Ein Verhältnis von zwei Aggregaten | [Formel-Widget](#86-combine-queries-with-formula-widgets) |
+| Ein Verhältnis von zwei Aggregaten | [Formel-Widget](tutorial-3.md#combine-queries-with-formula-widgets) |
 | Ein Wert pro Host, dann der „schlechteste Host“ | `FACET host ORDER BY alias DESC LIMIT 1` |
 | Ein Durchschnittswert pro Host im Zeitverlauf | `FACET host TIMESERIES AUTO` und lesen Sie die Serie |
 
