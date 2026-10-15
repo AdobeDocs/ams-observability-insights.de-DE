@@ -116,7 +116,7 @@ Wenn die einzelne Zeile eines Zahlen-Widgets einen Textwert enthält (z. B. `lat
 
 ## Variablen
 
-Mit Variablen kann ein Dashboard mehrere Kontexte bereitstellen, z. B. jeweils einen Service, eine Umgebung oder einen Schwellenwert. Sie werden in ([ 3) ](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables).
+Mit Variablen kann ein Dashboard mehrere Kontexte bereitstellen, z. B. jeweils einen Service, eine Umgebung oder einen Schwellenwert. Sie werden in ([&#x200B; 3) &#x200B;](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables).
 
 > **Warnung**
 >
@@ -124,7 +124,7 @@ Mit Variablen kann ein Dashboard mehrere Kontexte bereitstellen, z. B. jeweils e
 
 ## Formel-Widgets
 
-Eine Formel kombiniert 2-6 benannte SQL-Abfragen arithmetisch, z. B. `(errors / total) * 100`. Verwenden Sie eine Option, wenn ein KPI mehr als eine Abfrage erfordert, z. B. ein Verhältnis, Reserven, eine Summe der Raten oder eine Brennrate. Siehe [Tutorial ](../tutorials/tutorial-3.md#combine-queries-with-formula-widgets).
+Eine Formel kombiniert 2-6 benannte SQL-Abfragen arithmetisch, z. B. `(errors / total) * 100`. Verwenden Sie eine Option, wenn ein KPI mehr als eine Abfrage erfordert, z. B. ein Verhältnis, Reserven, eine Summe der Raten oder eine Brennrate. Siehe [Tutorial &#x200B;](../tutorials/tutorial-3.md#combine-queries-with-formula-widgets).
 
 ## Freigeben, Exportieren und Importieren
 
