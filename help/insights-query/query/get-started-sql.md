@@ -1,9 +1,9 @@
 ---
 title: Erste Schritte mit SQL
 description: Erfahren Sie, wie Sie die Observability Insights-Telemetrie mit SQL abfragen.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '684'
 ht-degree: 1%
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 | **Gilt für** | Insights-Benutzeroberfläche → **Erkunden** und **Dashboards** (benutzerdefinierte Dashboards) |
 | **Zielgruppe** | Ingenieure, SREs und Power-User, die SQL kennen |
 
-> **Tipp**
+>[!TIP]
 >
 > Jeder Code-Block mit der Kennzeichnung `sql` ist eine SQL-Abfrage, die Sie direkt in **Erkunden → SQL** oder in **Dashboards → Widget hinzufügen → SQL** einfügen können.
 
@@ -42,7 +42,7 @@ SQL verwenden für:
 
 SQL unterstützt sowohl **Ereignisabfragen**, die einzelne Anfragezeilen zurückgeben, als auch **Aggregatabfragen**, die Gesamtsummen, Perzentile, Raten, Aufschlüsselungen und Zeitreihen zurückgeben.
 
-> **Tipp**
+>[!TIP]
 >
 > Die Vorlagen in **Dashboards → Dashboard erstellen** werden vollständig aus SQL erstellt. Öffnen Sie ein beliebiges Vorlagen-Widget mit dem Stiftsymbol, um die zugehörige Abfrage anzuzeigen und daraus zu lernen.
 
@@ -57,7 +57,7 @@ SQL kann vier Datenfamilien abfragen. Die vollständige Liste finden Sie unter [
 | **Generische Metriken** | `MetricGauge`, `MetricSum` | Beliebige OpenTelemetry-Metriken nach Name, Metrikerkennung |
 | **Voraggregierte span-Komposition** | `SpanBreakdown` | Welche untergeordneten Vorgänge eine Transaktion bilden |
 
-> **Hinweis**
+>[!NOTE]
 >
 > Protokolle, Warnhinweisdefinitionen und Inventarbeziehungen sind nicht verfügbar.
 

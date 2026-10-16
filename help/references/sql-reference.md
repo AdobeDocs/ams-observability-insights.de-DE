@@ -1,9 +1,9 @@
 ---
 title: SQL-Referenz
 description: Verweisen Sie auf die SQL-Syntax, -Klauseln und -Funktionen, die von Observability Insights unterstützt werden.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1504'
 ht-degree: 12%
 ---
 
@@ -29,7 +29,7 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-> **Hinweis**
+>[!NOTE]
 >
 > Die oben genannten `--` Anmerkungen dienen nur der Dokumentation. SQL selbst akzeptiert keine Kommentare.
 

@@ -1,28 +1,15 @@
 ---
 title: Dashboard-Blueprints
 description: Erstellen Sie Observability Insights-Dashboards mithilfe von Blueprints für die Anwendungs- und Infrastrukturüberwachung.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 94e108d029b04bf4f04aec3fb8b949705c4005e1
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1196'
 ht-degree: 1%
 ---
 
 ## Dashboard-Blueprints {#dashboard-blueprints}
 
 Jeder Blueprint ist ein vollständiges, komplexes Dashboard. Es listet das Ziel, das Layout der Registerkarten und Abschnitte sowie jedes Widget mit seinem Diagrammtyp, seiner Einheit, den Schwellenwerten, seiner Größe und seiner Abfrage auf. Die Größen werden im 12-spaltigen Raster `width×height`. Jeden von oben nach unten erstellen und dann ziehen, um ihn anzupassen.
-
-| Blueprint | Zielgruppe | Lichter |
-| ------------------------------------------------------------------------------------ | --------------------- | ---------------------------------------------------------------------------------- |
-| [11.1 Goldene Signale / SLO](#111-golden-signals--slo-board) | SRE, auf Abruf | KPI-Kacheln mit Schwellenwerten, Apdex, Fehler %, Sättigung |
-| [11.2 Fehlerklassifizierung](#112-error-triage-board) | auf Abruf | Fehlerklassen, 5xx Hotspots, fehlgeschlagene Anfragen mit Trace-IDs |
-| [11.3 Latenz - Vertiefung](#113-latency-deep-dive-board) | Performance-Ingenieure | Perzentile, Latenz-Buckets, Variabilität, Transaktionszusammensetzung, langsamste Spuren |
-| [11.4 Downstream-Abhängigkeiten](#114-downstream-dependencies-board) | Dienstbesitzer | Ausgehendes HTTP, DB, Messaging, RPC |
-| [11.5 AEM Author / Publish / Dispatcher](#115-aem-author--publish--dispatcher-board) | AEM-Teams | Abschnitte pro Ebene, Sling/JSP/JCR, Dispatcher-Last |
-| [11.6 Infrastrukturkapazität](#116-infrastructure-capacity-board) | Plattform/Kapazität | CPU-Modi, Arbeitsspeicher, Festplatte, Netzwerkraten, Formeln |
-| [11.7 JVM-Status](#117-jvm-health-board) | Java-Teams | Heap %-Formeln, Heap pro Host und Pool, Threads, JVM CPU |
-| [11.8 Executive / NOC Wand](#118-executive--noc-wall-board) | NOC, Führung | KPI-Kacheln, Verfügbarkeitsformel, Traffic nach Ebene, SLO-Hinweis |
-| [11,9-Verhältnisse und Reserven](#119-ratios--headroom-board-formula-showcase) | Alle | Formel-Widget-Showcase |
-| [11.10 Service-Explorer](#1110-service-explorer-variable-driven) | Jedes Team | Variablengesteuert, wiederverwendbar |
 
 **Diagrammlegende:** **N** = Zahl, **L** = Linie, **A** = Fläche, **B** = Balken, **P** = Kreis, **T** = Tabelle.
 
@@ -644,7 +631,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 ・ Netzwerk-E/A insgesamt für einen Host (Formel)** - Formula-Widget, L, `bytes/s`, 12×4. Formeln können nicht `FACET` werden und `rate()` müssen auf einen Host angewendet werden (siehe [Kuratierte Metrikentitäten](#53-curated-metric-entities)), also heften Sie den Host an - ersetzen Sie `web-publish-01` durch einen echten Host-Namen aus W5.
+**W20 ・ Netzwerk-E/A insgesamt für einen Host (Formel)** - Formula-Widget, L, `bytes/s`, 12×4. Formeln können nicht `FACET` werden und `rate()` müssen auf einen Host angewendet werden (siehe [Kuratierte Metrikentitäten](../references/data-dictionary.md#curated-metric-entities)), also heften Sie den Host an - ersetzen Sie `web-publish-01` durch einen echten Host-Namen aus W5.
 
 `netRx`:
 
@@ -939,7 +926,7 @@ Formel:
 limit - used
 ```
 
-**W5 ・ Netzwerk-Out/In-Verhältnis für einen Host** — Formel, L (Host anheften; siehe [Kuratierte Metrikentitäten](#53-curated-metric-entities))
+**W5 ・ Netzwerk-Out/In-Verhältnis für einen Host** — Formel, L (Host anheften; siehe [Kuratierte Metrikentitäten](../references/data-dictionary.md#curated-metric-entities))
 
 `rx`:
 

@@ -1,9 +1,9 @@
 ---
 title: Fehlerbehebung
 description: Fehlerbehebung bei SQL-Abfragen, Diagrammen und Dashboards in Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '335'
 ht-degree: 6%
 ---
 
@@ -19,14 +19,14 @@ Fehlermeldungen werden unter dem Editor angezeigt, wenn Sie **Abfrage** oder **a
 | `FACET and TIMESERIES require an aggregate query` | Ereignisabfrage mit FACET/TIMESERIES | Aggregat verwenden. |
 | `FACET supports at most five attributes` | > 5 Facetten | Reduzieren. |
 | `average requires a numeric attribute` | e.g. `average(service)` | Verwenden Sie `uniqueCount`/`latest` oder ein numerisches Attribut. |
-| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` ohne TIMESERIES oder auf einem Tacho | `TIMESERIES AUTO` hinzufügen; ✔ Zählerentität verwenden ([Kuratierte Metrikentitäten](#53-curated-metric-entities)); für Messgeräte `derivative()` verwenden. |
+| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` ohne TIMESERIES oder auf einem Tacho | `TIMESERIES AUTO` hinzufügen; ✔ Zählerentität verwenden ([Kuratierte Metrikentitäten](../references/data-dictionary.md#curated-metric-entities)); für Messgeräte `derivative()` verwenden. |
 | `rate cannot be combined with other aggregates` | Mehrere Elemente mit `rate()` | Ein `rate()` pro Widget; mit einer Formel kombinieren. |
 | `percentOfTotal cannot be combined with TIMESERIES` | — | ZEITREIHEN entfernen. |
 | `apdex requires an entity with a status attribute` | `apdex` einer Metrik-Entität | Verwenden Sie `Transaction`/`Span`/`AppRequest`. |
 | `ORDER BY 'x' must reference a selected value or alias` | Sortierung nach etwas nicht ausgewähltem | Alias Das Aggregat und die Reihenfolge nach dem Alias. |
 | `IN requires between 1 and 100 values` | — | Aufspaltung oder Verwendung von `LIKE`. |
 | `Use IS NULL or IS NOT NULL for null comparisons` | `attr = NULL` | Verwenden von `IS NULL`. |
-| `Unexpected character '{'` | `{{variable}}` in der Widget-Vorschau hinzufügen oder auf Speichern | Siehe [Tutorial 3, Schritt 8.7](#87-make-dashboards-reusable-with-variables) Einschränkung. |
+| `Unexpected character '{'` | `{{variable}}` in der Widget-Vorschau hinzufügen oder auf Speichern | Siehe [Tutorial 3](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables) Einschränkung. |
 | `Unexpected character ';'` / `'"'` | Semikolons oder doppelte Anführungszeichen | `;` entfernen; einfache Anführungszeichen verwenden. |
 | `Expected a positive duration such as 30 minutes` | `TIMESERIES 5m` | `TIMESERIES 5 minutes` schreiben. |
 | `Time range cannot exceed 31 days` | Auswahl > 31 T | Verengt das Fenster. |
@@ -36,7 +36,7 @@ Fehlermeldungen werden unter dem Editor angezeigt, wenn Sie **Abfrage** oder **a
 | `Unknown query name 'x' - must be one of: …` | Formel verweist auf einen fehlenden Namen | Namen genau übereinstimmen (Groß- und Kleinschreibung berücksichtigen). |
 | **Speichern fehlgeschlagen** | Eine Widget-Abfrage ist Server-seitig ungültig (oft `{{var}}`) | Öffnen Sie jedes kürzlich bearbeitete Widget und **Ausführen** beheben oder entfernen Sie das ungültige Widget. |
 | _Wert für{{x}}_ auswählen | Variable hat keine Auswahl | Wählen Sie einen Wert in der Variablenleiste. |
-| _Keine Aktivität in der letzten …_ | Keine Zeilen im Fenster | Fenster erweitern; Filter mit einer Erkennungsabfrage überprüfen ([Datenerkennung](#101-data-discovery)) |
+| _Keine Aktivität in der letzten …_ | Keine Zeilen im Fenster | Fenster erweitern; Filter mit einer Erkennungsabfrage überprüfen ([Datenerkennung](../examples/query-cookbook.md#data-discovery)) |
 | In Punkte zersplitterte Linien | Bucket kleiner als Datenkadenz | Verwenden Sie `TIMESERIES AUTO` (≥ 2 Min.) oder ein Balkendiagramm. |
 | Facet zeigt eine Gruppe mit leeren Zeichenfolgen an | Attribut fehlt in einigen Zeilen | Fügen Sie `WHERE attr != ''` hinzu. |
 | _Dieses alte SQL-Bedienfeld wird nicht mehr ausgeführt_ | Bedienfeld aus dem alten Raw-SQL-Builder | Bearbeiten → in SQL neu erstellen. |

@@ -12,9 +12,9 @@ feature_v2:
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
     internal-label: Admin
-source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
+source-git-commit: ba4f816187e77f3f7b708942b3f14535417c2fdc
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '253'
 ht-degree: 0%
 ---
 
@@ -37,3 +37,11 @@ Beginnen Sie mit [Anwendungsleistungsüberwachung](/help/applications.md), um An
 ## Welche Daten werden von Observability Insights tatsächlich erfasst? {#what-data-is-collected}
 
 Siehe [Abdeckung, Umgebungen und Datenaufbewahrung](../get-started/coverage-and-data.md) für den Überwachungsumfang, die Anwendungsdarstellung, die Aufbewahrungsfristen und die betrieblichen Auswirkungen.
+
+## Warum kann ich mich mit anderen Browsern, aber nicht mit Google Chrome anmelden?
+
+So lassen Sie Drittanbieter-Cookies für Observability Insights zu und versuchen Sie erneut, sich anzumelden:
+
+1. Um auf Cookie-Einstellungen zuzugreifen, öffnen Sie `chrome://settings/cookies` in Google Chrome.
+2. Um Cookies für Observability Insights zuzulassen, wählen **unter „Websites, die Cookies von Drittanbietern verwenden dürfen** die Option &quot;**&quot; aus** geben Sie `https://insights.adobecqms.net` ein.
+3. Um zu überprüfen, ob das Problem behoben wurde, melden Sie sich bei Observability Insights in einem Inkognito-Fenster an.
