@@ -457,7 +457,7 @@ Die Rate pro Sekunde eines **kumulativen Zählers**. In jedem Bucket nimmt `rate
 SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES AUTO
 ```
 
-- Funktioniert nur bei Zählerentitäten (✔ im [Datenwörterbuch) ](#53-curated-metric-entities).
+- Funktioniert nur bei Zählerentitäten (✔ im [Datenwörterbuch) &#x200B;](#53-curated-metric-entities).
 - Erfordert `TIMESERIES` und muss das **Aggregat**. `FILTER` ist nicht erlaubt.
 
 >[!WARNING]
