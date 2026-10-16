@@ -1,9 +1,9 @@
 ---
 title: Abfragen mit SQL
 description: Erfahren Sie, wie Sie SQL-Abfragen in Observability Insights schreiben und ausführen.
-source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '555'
 ht-degree: 1%
 ---
 
@@ -15,7 +15,7 @@ Bevor Sie ein Tool verwenden, sollten Sie wissen, wie es funktioniert. In diesem
 
 Die beste Möglichkeit, SQL zu verwenden, besteht darin, **Erkunden** zu öffnen und es mit Ihren eigenen Daten zu versuchen.
 
-> **Tipp**
+>[!TIP]
 >
 > SQL ist schreibgeschützt. Es können keine Daten geändert oder gelöscht werden, und jede Abfrage bezieht sich auf Ihren Mandanten.
 
@@ -92,6 +92,6 @@ Jede Abfrage gibt eine von vier Formen zurück. Die Form entscheidet, welche Dia
 | **Erkunden** | Die globale Zeitauswahl. `SINCE`/`UNTIL` werden ignoriert, wenn ein Auswahlbereich aktiv ist. |
 | **API ohne expliziten Bereich** | `SINCE`/`UNTIL` in der Abfrage, standardmäßig die letzte Stunde. |
 
-> **Hinweis**
+>[!NOTE]
 >
 > Da die Auswahl in Dashboards und beim Erkunden gewinnt, werden in diesem Handbuch in der Regel `SINCE` aus Dashboard-Abfragen ausgeschlossen. Für die Abfragen sollte immer eine Zeitauswahl definiert werden.

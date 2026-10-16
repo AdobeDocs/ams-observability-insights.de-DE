@@ -1,9 +1,9 @@
 ---
 title: 'Tutorial 1: Erste Abfragen'
 description: Schreiben Sie Ihre ersten SQL-Abfragen mit der Observability Insights-Telemetrie.
-source-git-commit: 52cc24792c47727700428be58b5bbb2a5c7223d2
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '549'
 ht-degree: 0%
 ---
 
@@ -33,7 +33,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Die Zeilen werden nach der ersten Spalte in absteigender Reihenfolge sortiert. Wenn Sie also zuerst `timestamp`, erhalten Sie die neuesten Anfragen am Anfang.
 
-> **Hinweis**
+>[!NOTE]
 >
 > SQL hat keine `SELECT *`. Durch die Auflistung von Attributen werden Ergebnisse klein und lesbar gehalten. Das [Datenwörterbuch](#data-dictionary) und die automatische Vervollständigung im Editor zeigen, was verfügbar ist.
 
@@ -67,7 +67,7 @@ Trennt Aggregate durch Kommas und benennt jedes mit `AS`:
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-> **Tipp**
+>[!TIP]
 >
 > Aliase werden zu Spaltenüberschriften und Legendenbeschriftungen, auf die Sie in `ORDER BY` verweisen. Gewöhnen Sie sich an, jedes Aggregat zu benennen.
 
@@ -125,7 +125,7 @@ Verwenden Sie `LIKE` mit `%` für Teilübereinstimmungen:
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-> **Hinweis**
+>[!NOTE]
 >
 > Bei Zeichenfolgenwerten wird zwischen Groß- und Kleinschreibung unterschieden und einfache Anführungszeichen verwendet: `'Error'`, nicht `"Error"` oder `'error'`. Ersetzen Sie `checkout` durch einen Dienst Ihres Mandanten. Im nächsten Schritt erfahren Sie, wie Sie sie auflisten.
 

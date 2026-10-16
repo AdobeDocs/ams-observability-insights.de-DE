@@ -1,9 +1,9 @@
 ---
 title: SQL-Referenz
 description: Verweisen Sie auf die SQL-Syntax, -Klauseln und -Funktionen, die von Observability Insights unterstützt werden.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1504'
 ht-degree: 12%
 ---
 
@@ -29,7 +29,7 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-> **Hinweis**
+>[!NOTE]
 >
 > Die oben genannten `--` Anmerkungen dienen nur der Dokumentation. SQL selbst akzeptiert keine Kommentare.
 
@@ -457,7 +457,7 @@ Die Rate pro Sekunde eines **kumulativen Zählers**. In jedem Bucket nimmt `rate
 SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES AUTO
 ```
 
-- Funktioniert nur bei Zählerentitäten (✔ im [Datenwörterbuch) &#x200B;](#53-curated-metric-entities).
+- Funktioniert nur bei Zählerentitäten (✔ im [Datenwörterbuch) ](#53-curated-metric-entities).
 - Erfordert `TIMESERIES` und muss das **Aggregat**. `FILTER` ist nicht erlaubt.
 
 >[!WARNING]
