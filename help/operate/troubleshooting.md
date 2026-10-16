@@ -1,9 +1,9 @@
 ---
 title: Fehlerbehebung
 description: Fehlerbehebung bei SQL-Abfragen, Diagrammen und Dashboards in Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: c45d62d2af62e6bd0c88e210b31c8954b75533be
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '335'
 ht-degree: 6%
 ---
 
@@ -26,7 +26,7 @@ Fehlermeldungen werden unter dem Editor angezeigt, wenn Sie **Abfrage** oder **a
 | `ORDER BY 'x' must reference a selected value or alias` | Sortierung nach etwas nicht ausgewähltem | Alias Das Aggregat und die Reihenfolge nach dem Alias. |
 | `IN requires between 1 and 100 values` | — | Aufspaltung oder Verwendung von `LIKE`. |
 | `Use IS NULL or IS NOT NULL for null comparisons` | `attr = NULL` | Verwenden von `IS NULL`. |
-| `Unexpected character '{'` | `{{variable}}` in der Widget-Vorschau hinzufügen oder auf Speichern | Siehe [Tutorial 3, Schritt 8.7](#87-make-dashboards-reusable-with-variables) Einschränkung. |
+| `Unexpected character '{'` | `{{variable}}` in der Widget-Vorschau hinzufügen oder auf Speichern | Siehe [Tutorial 3](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables) Einschränkung. |
 | `Unexpected character ';'` / `'"'` | Semikolons oder doppelte Anführungszeichen | `;` entfernen; einfache Anführungszeichen verwenden. |
 | `Expected a positive duration such as 30 minutes` | `TIMESERIES 5m` | `TIMESERIES 5 minutes` schreiben. |
 | `Time range cannot exceed 31 days` | Auswahl > 31 T | Verengt das Fenster. |
@@ -36,7 +36,7 @@ Fehlermeldungen werden unter dem Editor angezeigt, wenn Sie **Abfrage** oder **a
 | `Unknown query name 'x' - must be one of: …` | Formel verweist auf einen fehlenden Namen | Namen genau übereinstimmen (Groß- und Kleinschreibung berücksichtigen). |
 | **Speichern fehlgeschlagen** | Eine Widget-Abfrage ist Server-seitig ungültig (oft `{{var}}`) | Öffnen Sie jedes kürzlich bearbeitete Widget und **Ausführen** beheben oder entfernen Sie das ungültige Widget. |
 | _Wert für{{x}}_ auswählen | Variable hat keine Auswahl | Wählen Sie einen Wert in der Variablenleiste. |
-| _Keine Aktivität in der letzten …_ | Keine Zeilen im Fenster | Fenster erweitern; Filter mit einer Erkennungsabfrage überprüfen ([Datenerkennung](#101-data-discovery)) |
+| _Keine Aktivität in der letzten …_ | Keine Zeilen im Fenster | Fenster erweitern; Filter mit einer Erkennungsabfrage überprüfen ([Datenerkennung](../examples/query-cookbook.md#data-discovery)) |
 | In Punkte zersplitterte Linien | Bucket kleiner als Datenkadenz | Verwenden Sie `TIMESERIES AUTO` (≥ 2 Min.) oder ein Balkendiagramm. |
 | Facet zeigt eine Gruppe mit leeren Zeichenfolgen an | Attribut fehlt in einigen Zeilen | Fügen Sie `WHERE attr != ''` hinzu. |
 | _Dieses alte SQL-Bedienfeld wird nicht mehr ausgeführt_ | Bedienfeld aus dem alten Raw-SQL-Builder | Bearbeiten → in SQL neu erstellen. |

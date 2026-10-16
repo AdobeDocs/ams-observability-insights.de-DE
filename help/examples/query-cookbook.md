@@ -1,17 +1,15 @@
 ---
 title: Cookbook abfragen
 description: Verwenden Sie SQL-Abfragerezepte, um die Anwendungs- und Infrastrukturtelemetrie in Observability Insights zu untersuchen.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: ae94813d8db77f7d5795add161a7fbfd7427c050
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '554'
 ht-degree: 0%
 ---
 
 ## Cookbook abfragen {#query-cookbook}
 
 Das Cookbook ist eine Bibliothek mit einsatzbereiten Abfragen, gruppiert nach Thema. Jeder Abfrage wird der Diagrammtyp vorangestellt, der am besten zu ihr passt (in **)**. Zeitklauseln werden ausgeschlossen, da die Zeitauswahl das Fenster steuert.
-
-**In diesem Dokument:** [10.1 Datenerkennung](#101-data-discovery) ・ [10.2 Durchsatz](#102-throughput) ・ [10.3 Latenz](#103-latency) ・ [10.4 Fehler](#104-errors) ・ [10.5 APDEX](#105-apdex--user-experience) ・ [10.6 Services und Hosts](#106-services-hosts--instances)10.7 Abhängigkeiten[&#128279;](#107-downstream-dependencies)100 AEM[&#128279;](#108-aem-adobe-experience-manager) ・ [10.9 Infrastruktur](#109-infrastructure) [&#x200B; &#x200B;](#1010-jvm--runtime) ・ 10.10.10.10.0 JVM
 
 >[!TIP]
 >
