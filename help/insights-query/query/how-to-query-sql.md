@@ -1,7 +1,7 @@
 ---
 title: Abfragen mit SQL
 description: Erfahren Sie, wie Sie SQL-Abfragen in Observability Insights schreiben und ausführen.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 1%
@@ -43,7 +43,7 @@ Dies zählt Anfragen pro Service und zeigt an, welche Services Berichte erstelle
 
 > **Wichtig**
 >
-> **Entdecken vor dem Erstellen.** Die Verfügbarkeit von Attributen hängt davon ab, wie jeder Service instrumentiert ist. Führen Sie [Discovery-Abfragen](#101-data-discovery) zuerst auf einem neuen Mandanten aus, um zu sehen, welche Services, Hosts, Attribute und Metriken tatsächlich Daten enthalten.
+> **Entdecken vor dem Erstellen.** Die Verfügbarkeit von Attributen hängt davon ab, wie jeder Service instrumentiert ist. Führen Sie [Discovery-Abfragen](../../examples/query-cookbook.md#data-discovery) zuerst auf einem neuen Mandanten aus, um zu sehen, welche Services, Hosts, Attribute und Metriken tatsächlich Daten enthalten.
 
 ### Ausführen einer Abfrage
 

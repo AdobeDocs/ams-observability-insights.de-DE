@@ -1,9 +1,9 @@
 ---
 title: Dashboard-Blueprints
 description: Erstellen Sie Observability Insights-Dashboards mithilfe von Blueprints für die Anwendungs- und Infrastrukturüberwachung.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1308'
 ht-degree: 1%
 ---
 
@@ -644,7 +644,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 ・ Netzwerk-E/A insgesamt für einen Host (Formel)** - Formula-Widget, L, `bytes/s`, 12×4. Formeln können nicht `FACET` werden und `rate()` müssen auf einen Host angewendet werden (siehe [Kuratierte Metrikentitäten](#53-curated-metric-entities)), also heften Sie den Host an - ersetzen Sie `web-publish-01` durch einen echten Host-Namen aus W5.
+**W20 ・ Netzwerk-E/A insgesamt für einen Host (Formel)** - Formula-Widget, L, `bytes/s`, 12×4. Formeln können nicht `FACET` werden und `rate()` müssen auf einen Host angewendet werden (siehe [Kuratierte Metrikentitäten](../references/data-dictionary.md#curated-metric-entities)), also heften Sie den Host an - ersetzen Sie `web-publish-01` durch einen echten Host-Namen aus W5.
 
 `netRx`:
 
@@ -939,7 +939,7 @@ Formel:
 limit - used
 ```
 
-**W5 ・ Netzwerk-Out/In-Verhältnis für einen Host** — Formel, L (Host anheften; siehe [Kuratierte Metrikentitäten](#53-curated-metric-entities))
+**W5 ・ Netzwerk-Out/In-Verhältnis für einen Host** — Formel, L (Host anheften; siehe [Kuratierte Metrikentitäten](../references/data-dictionary.md#curated-metric-entities))
 
 `rx`:
 

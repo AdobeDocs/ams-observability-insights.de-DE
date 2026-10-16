@@ -1,7 +1,7 @@
 ---
 title: Fehlerbehebung
 description: Fehlerbehebung bei SQL-Abfragen, Diagrammen und Dashboards in Observability Insights.
-source-git-commit: c45d62d2af62e6bd0c88e210b31c8954b75533be
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '335'
 ht-degree: 6%
@@ -19,7 +19,7 @@ Fehlermeldungen werden unter dem Editor angezeigt, wenn Sie **Abfrage** oder **a
 | `FACET and TIMESERIES require an aggregate query` | Ereignisabfrage mit FACET/TIMESERIES | Aggregat verwenden. |
 | `FACET supports at most five attributes` | > 5 Facetten | Reduzieren. |
 | `average requires a numeric attribute` | e.g. `average(service)` | Verwenden Sie `uniqueCount`/`latest` oder ein numerisches Attribut. |
-| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` ohne TIMESERIES oder auf einem Tacho | `TIMESERIES AUTO` hinzufügen; ✔ Zählerentität verwenden ([Kuratierte Metrikentitäten](#53-curated-metric-entities)); für Messgeräte `derivative()` verwenden. |
+| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` ohne TIMESERIES oder auf einem Tacho | `TIMESERIES AUTO` hinzufügen; ✔ Zählerentität verwenden ([Kuratierte Metrikentitäten](../references/data-dictionary.md#curated-metric-entities)); für Messgeräte `derivative()` verwenden. |
 | `rate cannot be combined with other aggregates` | Mehrere Elemente mit `rate()` | Ein `rate()` pro Widget; mit einer Formel kombinieren. |
 | `percentOfTotal cannot be combined with TIMESERIES` | — | ZEITREIHEN entfernen. |
 | `apdex requires an entity with a status attribute` | `apdex` einer Metrik-Entität | Verwenden Sie `Transaction`/`Span`/`AppRequest`. |

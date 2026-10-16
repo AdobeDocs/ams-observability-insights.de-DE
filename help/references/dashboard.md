@@ -1,7 +1,7 @@
 ---
 title: Dashboard- und Abfragedokumentation
 description: Referenzdokumentation für Observability Insights-SQL-Abfragen und -Dashboards.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '10254'
 ht-degree: 4%
@@ -33,14 +33,14 @@ ht-degree: 4%
 | **Tutorials** | [6. Tutorial 1: Ihre ersten Abfragen](#6-tutorial-1-your-first-queries) | `SELECT`, `FROM`, `LIMIT`, Aggregate, Zeit, `TIMESERIES`, `WHERE`, `FACET` |
 |                 | [7. Tutorial 2: Steuern Sie Ihre Daten](#7-tutorial-2-control-your-data) | Eindeutige Werte, Neueste/Früheste, Prozentsätze, Perzentile, Kennzeichnungen, Platzhalter, Reihenfolge |
 |                 | [8. Tutorial 3: Erweitern des Dashboards](#8-tutorial-3-advance-your-dashboarding) | Bedingte Aggregate, Apdex, Raten, Histogramme, Formeln, Variablen, Abschnitte |
-|                 | [9. Tutorial 4: Erweiterte &#x200B;](#9-tutorial-4-advanced-functions) | `stddev`, `derivative`, Rang-`latest`, Anteil an der Gesamtsumme, span-Komposition, Metrikerkennung |
+|                 | [9. Tutorial 4: Erweiterte ](#9-tutorial-4-advanced-functions) | `stddev`, `derivative`, Rang-`latest`, Anteil an der Gesamtsumme, span-Komposition, Metrikerkennung |
 | **Beispiele** | [10. Abfrage-Cookbook](#10-query-cookbook) | Über 100 einsatzbereite Abfragen nach Thema (einschließlich AEM) |
 |                 | [11. Dashboard-Blueprints](#11-dashboard-blueprints) | Zehn vollständige, komplexe Dashboards mit der Abfrage jedes Widgets |
 | **Bedienen** | [12. Leistung](#12-performance) | Datenaggregationen, Abfragebudgets und wie man Dashboards schnell hält |
 |                 | [13. Fehlerbehebung](#13-troubleshooting) | Jede Fehlermeldung, was sie bedeutet und wie sie behoben werden kann |
 |                 | [14. Anhang](#14-appendix) | Beschränkungen, Dateiformat exportieren, einseitige Schnellübersicht |
 
-&#x200B;# Erste Schritte
+# Erste Schritte
 
 ## &#x200B;1. Erste Schritte mit SQL: die Sprache Ihrer Telemetrie
 
@@ -133,7 +133,7 @@ Im Folgenden finden Sie die SQL-Regeln:
 
 - [Abfragen mit SQL](#2-how-to-query-with-SQL-the-mechanics-of-querying): Erkunden Sie Daten und verstehen Sie, wie Abfragen ausgeführt werden.
 - [Diagramme und Dashboards](#3-charts-and-dashboards-visualizing-your-data): Visualisieren Sie Ihre Ergebnisse.
-- [Tutorial 1: Ihre ersten &#x200B;](#6-tutorial-1-your-first-queries): Eine praktische Anleitung.
+- [Tutorial 1: Ihre ersten ](#6-tutorial-1-your-first-queries): Eine praktische Anleitung.
 - [SQL-Referenz](#4-SQL-reference): Vollständige Syntax, Klauseln und Funktionen.
 
 [↑ Nach oben](#top)
@@ -473,14 +473,14 @@ Wenn die einzelne Zeile eines Zahlen-Widgets einen Textwert enthält (z. B. `lat
 
 ### Variablen
 
-Mit Variablen kann ein Dashboard mehrere Kontexte bereitstellen, z. B. jeweils einen Service, eine Umgebung oder einen Schwellenwert. Sie werden in ([&#x200B; 3) &#x200B;](#87-make-dashboards-reusable-with-variables).
+Mit Variablen kann ein Dashboard mehrere Kontexte bereitstellen, z. B. jeweils einen Service, eine Umgebung oder einen Schwellenwert. Sie werden in ([ 3) ](#87-make-dashboards-reusable-with-variables).
 
 >[!WARNING]
 > **Bekannte Einschränkung im aktuellen Build:** `{{variables}}` in Widgets **Titel** und **Text-Widgets**. Innerhalb des Widgets **SQL** werden sie im Dashboard gerendert, aber die **Widget hinzufügen** -Vorschau und die Server-seitige **Speichern**-Prüfung lehnen das Roh-`{{name}}`-Token mit `Unexpected character '{'` ab. Bis dies behoben ist, verwenden Sie Literalwerte in Widget-Abfragen und verwenden Sie **Duplizieren** um Varianten zu erstellen.
 
 ### Formel-Widgets
 
-Eine Formel kombiniert 2-6 benannte SQL-Abfragen arithmetisch, z. B. `(errors / total) * 100`. Verwenden Sie eine Option, wenn ein KPI mehr als eine Abfrage erfordert, z. B. ein Verhältnis, Reserven, eine Summe der Raten oder eine Brennrate. Siehe [Tutorial &#x200B;](#86-combine-queries-with-formula-widgets).
+Eine Formel kombiniert 2-6 benannte SQL-Abfragen arithmetisch, z. B. `(errors / total) * 100`. Verwenden Sie eine Option, wenn ein KPI mehr als eine Abfrage erfordert, z. B. ein Verhältnis, Reserven, eine Summe der Raten oder eine Brennrate. Siehe [Tutorial ](#86-combine-queries-with-formula-widgets).
 
 ### Freigeben, Exportieren und Importieren
 
@@ -505,7 +505,7 @@ Eine Formel kombiniert 2-6 benannte SQL-Abfragen arithmetisch, z. B. `(errors / 
 
 [↑ Nach oben](#top)
 
-&#x200B;# Referenz
+# Referenz
 
 ## &#x200B;4. SQL-Referenz
 
@@ -934,7 +934,7 @@ Die Rate pro Sekunde eines **kumulativen Zählers**. In jedem Bucket nimmt `rate
 SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES AUTO
 ```
 
-- Funktioniert nur bei Zählerentitäten (✔ im [Datenwörterbuch) &#x200B;](#53-curated-metric-entities).
+- Funktioniert nur bei Zählerentitäten (✔ im [Datenwörterbuch) ](#53-curated-metric-entities).
 - Erfordert `TIMESERIES` und muss das **Aggregat**. `FILTER` ist nicht erlaubt.
 
 >[!WARNING]
@@ -1194,7 +1194,7 @@ Jede kuratierte Entität umschließt eine OpenTelemetry-Metrik mit dem richtigen
 
 [↑ Nach oben](#top)
 
-&#x200B;# Tutorials
+# Tutorials
 
 ## &#x200B;6. Tutorial 1: Erste Abfragen
 
@@ -1828,13 +1828,13 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 
 [↑ Nach oben](#top)
 
-&#x200B;# Beispiele
+# Beispiele
 
 ## &#x200B;10. Cookbook abfragen
 
 Das Cookbook ist eine Bibliothek mit einsatzbereiten Abfragen, gruppiert nach Thema. Jeder Abfrage wird der Diagrammtyp vorangestellt, der am besten zu ihr passt (in **)**. Zeitklauseln werden ausgeschlossen, da die Zeitauswahl das Fenster steuert.
 
-**In diesem Dokument:** [10.1 Datenerkennung](#101-data-discovery) ・ [10.2 Durchsatz](#102-throughput) ・ [10.3 Latenz](#103-latency) ・ [10.4 Fehler](#104-errors) ・ [10.5 APDEX](#105-apdex--user-experience) ・ [10.6 Services und Hosts](#106-services-hosts--instances)10.7 Abhängigkeiten[&#128279;](#107-downstream-dependencies)100 AEM[&#128279;](#108-aem-adobe-experience-manager) ・ [10.9 Infrastruktur](#109-infrastructure) [&#x200B; &#x200B;](#1010-jvm--runtime) ・ 10.10.10.10.0 JVM
+**In diesem Dokument:** [10.1 Datenerkennung](#101-data-discovery) ・ [10.2 Durchsatz](#102-throughput) ・ [10.3 Latenz](#103-latency) ・ [10.4 Fehler](#104-errors) ・ [10.5 APDEX](#105-apdex--user-experience) ・ [10.6 Services und Hosts](#106-services-hosts--instances)10.7 Abhängigkeiten](#107-downstream-dependencies)100 AEM](#108-aem-adobe-experience-manager) ・ [10.9 Infrastruktur](#109-infrastructure) [ ](#1010-jvm--runtime) ・ [10.10.10.10.0 JVM[
 
 >[!TIP]
 > Ersetzen Sie Beispielwerte wie `'checkout'` oder `'web-publish-01'` durch echte Werte aus Ihrem Mandanten. Die folgenden Datenerkennungsabfragen führen sie auf.
@@ -2957,7 +2957,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 ・ Netzwerk-E/A insgesamt für einen Host (Formel)** - Formula-Widget, L, `bytes/s`, 12×4. Formeln können nicht `FACET` werden und `rate()` müssen auf einen Host angewendet werden (siehe [Kuratierte Metrikentitäten](#53-curated-metric-entities)), also heften Sie den Host an - ersetzen Sie `web-publish-01` durch einen echten Host-Namen aus W5.
+**W20 ・ Netzwerk-E/A insgesamt für einen Host (Formel)** - Formula-Widget, L, `bytes/s`, 12×4. Formeln können nicht `FACET` werden und `rate()` müssen auf einen Host angewendet werden (siehe [Kuratierte Metrikentitäten](data-dictionary.md#curated-metric-entities)), also heften Sie den Host an - ersetzen Sie `web-publish-01` durch einen echten Host-Namen aus W5.
 
 `netRx`:
 
@@ -3245,7 +3245,7 @@ Formel:
 limit - used
 ```
 
-**W5 ・ Netzwerk-Out/In-Verhältnis für einen Host** — Formel, L (Host anheften; siehe [Kuratierte Metrikentitäten](#53-curated-metric-entities))
+**W5 ・ Netzwerk-Out/In-Verhältnis für einen Host** — Formel, L (Host anheften; siehe [Kuratierte Metrikentitäten](data-dictionary.md#curated-metric-entities))
 
 `rx`:
 
@@ -3385,7 +3385,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 
 [↑ Nach oben](#top)
 
-&#x200B;# operieren
+# operieren
 
 ## &#x200B;12. Leistung
 
@@ -3430,7 +3430,7 @@ Fehlermeldungen werden unter dem Editor angezeigt, wenn Sie **Abfrage** oder **a
 | `FACET and TIMESERIES require an aggregate query` | Ereignisabfrage mit FACET/TIMESERIES | Aggregat verwenden. |
 | `FACET supports at most five attributes` | > 5 Facetten | Reduzieren. |
 | `average requires a numeric attribute` | e.g. `average(service)` | Verwenden Sie `uniqueCount`/`latest` oder ein numerisches Attribut. |
-| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` ohne TIMESERIES oder auf einem Tacho | `TIMESERIES AUTO` hinzufügen; ✔ Zählerentität verwenden ([Kuratierte Metrikentitäten](#53-curated-metric-entities)); für Messgeräte `derivative()` verwenden. |
+| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()` ohne TIMESERIES oder auf einem Tacho | `TIMESERIES AUTO` hinzufügen; ✔ Zählerentität verwenden ([Kuratierte Metrikentitäten](data-dictionary.md#curated-metric-entities)); für Messgeräte `derivative()` verwenden. |
 | `rate cannot be combined with other aggregates` | Mehrere Elemente mit `rate()` | Ein `rate()` pro Widget; mit einer Formel kombinieren. |
 | `percentOfTotal cannot be combined with TIMESERIES` | — | ZEITREIHEN entfernen. |
 | `apdex requires an entity with a status attribute` | `apdex` einer Metrik-Entität | Verwenden Sie `Transaction`/`Span`/`AppRequest`. |
